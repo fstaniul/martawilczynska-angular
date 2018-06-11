@@ -1,5 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import './styles/import';
-@import '/node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
 @import './styles/all';
+
+body {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.niconne {
+  font-family: 'Niconne', cursive;
+}

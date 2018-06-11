@@ -1,0 +1,126 @@
+@import 'src/styles/import';
+
+.dummy-space {
+  height: 100px;
+  width: 100%;
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  padding: 0 1rem;
+  transition: all 500ms ease-out;
+
+  &.scrolled {
+    height: 60px;
+    background: $white;
+    border-bottom: 2px solid map-get($theme-colors, light);
+  }
+}
+
+.nav-link {
+  color: map-get($theme-colors, light);
+  padding: 0.5rem 1.5rem;
+
+  &:hover,
+  &.active,
+  &:active {
+    background: rgba($white, 0.3);
+    color: $white;
+  }
+
+  @include media-breakpoint-up(lg) {
+    color: map-get($theme-colors, secondary);
+    padding: 0.5rem;
+
+    &:hover,
+    &:active,
+    &.active {
+      color: map-get($theme-colors, primary);
+    }
+  }
+}
+
+.nav {
+  @include media-breakpoint-down(md) {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    flex-direction: column;
+    background: map-get($theme-colors, primary);
+    width: 300px;
+    height: 100vh;
+    padding: 3rem 0 0 0;
+    transition: transform 600ms ease-in-out;
+
+    z-index: 100000;
+
+    &.open {
+      transform: translate3d(-300px, 0, 0);
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    position: relative;
+    margin-left: auto;
+  }
+}
+
+.close-button {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: map-get($theme-colors, light);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem 1rem 0.5rem 0.5rem;
+  outline: none;
+
+  &:hover,
+  &:active {
+    color: $white;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.nav-open-button {
+  outline: none;
+  border: 1px solid map-get($theme-colors, light);
+  padding: 0;
+  margin: 0;
+  height: 48px;
+  width: 48px;
+  position: relative;
+  border-radius: 24px;
+  background: $white;
+  color: map-get($theme-colors, secondary);
+  cursor: pointer;
+  transition: transform 300ms;
+
+  &:hover,
+  &:active {
+    border-color: map-get($theme-colors, primary);
+    background: map-get($theme-colors, primary);
+    color: white;
+    transform: rotate(90deg);
+  }
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

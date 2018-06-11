@@ -1,0 +1,18 @@
+<div class="nav-container" [class.scrolled]="pageScrolled">
+  <div class="d-block d-lg-none d-xl-block">
+    <app-logo></app-logo>
+  </div>
+  <button class="d-block d-lg-none ml-auto nav-open-button" type="button" (click)="navOpen = true">
+    <i class="fas fa-bars fa-fw"></i>
+  </button>
+  <nav class="nav" [class.open]="navOpen">
+    <button class="close-button" type="button" (click)="navOpen = false">
+      <i class="fas fa-times fa-fw fa-lg"></i>
+    </button>
+    <a *ngFor="let navItem of navItems" class="nav-link" [routerLink]="localizePath(navItem.path)" routerLinkActive="active">
+      <i class="fa-fw" [ngClass]="navItem.iconClass"></i>
+      {{navItem.translateString | translate}}
+    </a>
+  </nav>
+</div>
+<div class="dummy-space"></div>
