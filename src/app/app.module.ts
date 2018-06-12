@@ -27,6 +27,7 @@ import { PageLoaderComponent } from './components/page-loader/page-loader.compon
 import { AnimatedLoaderComponent } from './components/page-loader/animated-loader/animated-loader.component';
 import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
 import { NotEmptyDirective } from './directives/forms/not-empty.directive';
+import { InputErrorMessagesComponent } from './components/forms/input-error-messages/input-error-messages.component';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -51,7 +52,8 @@ export function translateLoaderFactory(http: HttpClient) {
     PageLoaderComponent,
     AnimatedLoaderComponent,
     ContactFormComponent,
-    NotEmptyDirective
+    NotEmptyDirective,
+    InputErrorMessagesComponent
   ],
   imports: [
     BrowserModule,

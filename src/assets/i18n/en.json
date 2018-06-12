@@ -1,4 +1,44 @@
 {
+  "contact": {
+    "form": {
+      "email": {
+        "errors": {
+          "email": "This is not a correct e-mail address!",
+          "required": "Write Your e-mail address so You can get a response."
+        },
+        "label": "E-Mail address"
+      },
+      "heading": "Contact Me via E-Mail",
+      "message": {
+        "errors": {
+          "maxLength":
+            "Your message is too long. Maximum number of characters you can write here is 2000.",
+          "required": "Write Your message."
+        },
+        "label": "Message",
+        "placeholder": "Write Your message here..."
+      },
+      "name": {
+        "errors": {
+          "required": "Write Your full name."
+        },
+        "label": "Full Name"
+      },
+      "phone": {
+        "errors": {
+          "pattern": "Please write your phone number as +48 123 123 123",
+          "required": "Your phone number is required."
+        },
+        "label": "Phone number"
+      }
+    }
+  },
+  "home": {
+    "buttons": {
+      "contact": "Contact Me",
+      "surgical-procedures": "Info about surgical procedures"
+    }
+  },
   "logo": {
     "subheading": "Specialist in Aestetic & General Surgery"
   },

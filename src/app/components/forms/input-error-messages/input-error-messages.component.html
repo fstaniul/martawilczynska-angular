@@ -1,0 +1,6 @@
+<div *ngIf="control && control.errors && (control.touched || control.dirty)">
+  <small *ngFor="let error of errors" class="d-block form-text text-danger p-0 m-0">
+    <i class="fas fa-times fa-fw mr-1"></i>
+    <span [translate]="translateString(error)"></span>
+  </small>
+</div>

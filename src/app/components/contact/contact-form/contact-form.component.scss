@@ -15,10 +15,22 @@ header {
 main {
   border-left: 1px solid map-get($theme-colors, light);
   border-right: 1px solid map-get($theme-colors, light);
+  border-bottom: 1px solid map-get($theme-colors, light);
+  border-radius: 0 0 $br $br;
   background: $white;
 }
 
-footer {
-  margin-bottom: 2rem;
-  border-radius: 0 0 $br $br;
+.buttons--container {
+  margin-bottom: -19px;
+}
+
+.btn-clear--custom {
+  background: $white;
+  border-color: map-get($theme-colors, light);
+  color: $secondary;
+
+  &:hover,
+  &:active {
+    background: map-get($theme-colors, light);
+  }
 }

@@ -2,25 +2,52 @@
   <h4 class="text-center py-3 mb-0" translate="contact.form.heading"></h4>
 </header>
 <main class="px-2 pt-2">
-  <form [formGroup]="form" class="p-2" novalidate>
+  <form [formGroup]="form" novalidate>
     <div class="form-group">
       <div class="floating-label">
         <input name="fullname" type="text" id="name-input" class="floating-input" placeholder="Will Smith" appNotEmpty formControlName="name">
         <label for="name-input" translate="contact.form.name.label"></label>
       </div>
+      <app-input-error-messages [control]="name" name="name" prefix="contact.form"></app-input-error-messages>
     </div>
     <div class="form-group">
       <div class="floating-label">
         <input name="email" type="email" id="email-input" class="floating-input" placeholder="will@smith.com" appNotEmpty formControlName="email">
         <label for="email-input" translate="contact.form.email.label"></label>
       </div>
+      <app-input-error-messages [control]="email" name="email" prefix="contact.form"></app-input-error-messages>
     </div>
     <div class="form-group">
       <div class="floating-label">
         <input name="phone" type="text" id="phone-input" class="floating-input" placeholder="+48 123 456 789" appNotEmpty formControlName="phone">
         <label for="phone-input" translate="contact.form.phone.label"></label>
       </div>
+      <app-input-error-messages [control]="phone" name="phone" prefix="contact.form"></app-input-error-messages>
+    </div>
+    <div class="form-group">
+      <div class="floating-label mb-0">
+        <textarea name="message" id="message-textarea" rows="10" class="floating-input" [placeholder]="'contact.form.message.placeholder' | translate"
+          appNotEmpty formControlName="message"></textarea>
+        <label for="message-textarea" translate="contact.form.message.label"></label>
+      </div>
+      <app-input-error-messages [control]="message" name="message" prefix="contact.form"></app-input-error-messages>
+    </div>
+    <div class="buttons--container text-right">
+      <div class="form-row">
+        <div class="col-12 col-sm-6">
+          <button class="btn btn-clear--custom btn-rounded btn-block" type="button">
+            <i class="fas fa-eraser fa-fw mr-1"></i>
+            <span translate="contact.form.buttons.clear"></span>
+          </button>
+        </div>
+        <div class="w-100 d-block d-sm-none pt-1"></div>
+        <div class="col-12 col-sm-6">
+          <button class="btn btn-primary btn-rounded btn-block" type="submit">
+            <i class="fas fa-location-arrow fa-fw mr-1"></i>
+            <span translate="contact.form.buttons.submit"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </form>
 </main>
-<footer></footer>

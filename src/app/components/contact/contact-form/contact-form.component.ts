@@ -24,4 +24,20 @@ export class ContactFormComponent implements OnInit {
       message: ['', [Validators.required, Validators.maxLength(2000)]]
     });
   }
+
+  get name() {
+    return this.form.get('name');
+  }
+
+  get phone() {
+    return this.form.get('phone');
+  }
+
+  get message() {
+    return this.form.get('message');
+  }
+
+  get email() {
+    return this.form.get('email');
+  }
 }
