@@ -15,7 +15,7 @@ export const routes: Routes = [
     path: ':locale',
     component: LanguageRouterComponent,
     children: [
-      {path: '', pathMatch: 'full', redirectTo: 'home'}
+      { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: HomeComponent },
       { path: 'about-me', component: AboutMeComponent },
       {
@@ -25,7 +25,7 @@ export const routes: Routes = [
       {
         path: 'office-and-staff',
         component: OfficeAndStaffComponent
-      }
+      },
       {
         path: 'reviews',
         component: ReviewsComponent,
@@ -40,6 +40,7 @@ export const routes: Routes = [
     ]
   },
   {
-    path: '**', redirectTo: 'en'
+    path: '**',
+    redirectTo: 'en'
   }
 ];

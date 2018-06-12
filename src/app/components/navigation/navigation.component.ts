@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { Subscription, fromEvent } from 'rxjs';
 
 export interface NavItem {
   path: string;
@@ -12,7 +13,7 @@ export interface NavItem {
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit, OnDestroy {
   navItems: NavItem[] = [
     {
       path: 'home',
@@ -52,10 +53,31 @@ export class NavigationComponent {
   ];
 
   navOpen = false;
+  pageScrolled = false;
 
-  constructor(public translateService: TranslateService) {}
+  private scrollSubscription: Subscription;
+
+  constructor(public translateService: TranslateService) {
+    this.onScroll = this.onScroll.bind(this);
+  }
+
+  ngOnInit() {
+    this.scrollSubscription = fromEvent(window, 'scroll').subscribe(
+      this.onScroll
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.scrollSubscription) {
+      this.scrollSubscription.unsubscribe();
+    }
+  }
 
   localizePath(path: string) {
     return `${this.translateService.currentLang}/${path}`;
+  }
+
+  onScroll() {
+    this.pageScrolled = window.pageYOffset > 0;
   }
 }

@@ -19,6 +19,8 @@ import { LogoComponent } from './components/logo/logo.component';
 import { OfficeAndStaffComponent } from './components/office-and-staff/office-and-staff.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
+import { TitleService } from './services/title.service';
+import { DataService } from './services/data.service';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -52,7 +54,7 @@ export function translateLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [],
+  providers: [TitleService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
