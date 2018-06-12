@@ -8,10 +8,46 @@ body {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  font-size: 16px;
+  font: 16px normal;
   font-family: 'Roboto', sans-serif;
+  background: url('assets/img/clinic-background.png') top center fixed no-repeat;
+  background-size: cover;
 }
 
 .niconne {
   font-family: 'Niconne', cursive;
+}
+
+.page-container--1200 {
+  display: block;
+  margin: 0 0.5rem;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 1rem;
+  }
+
+  @media (min-width: 1232px) {
+    margin: 0 auto;
+    width: 1200px;
+  }
+}
+
+.page-container--900 {
+  display: block;
+  margin: 0 0.5rem;
+
+  @include media-breakpoint-up(md) {
+    margin: 0 1rem;
+  }
+
+  @media (min-width: 932px) {
+    margin: 0 auto;
+    width: 900px;
+  }
+}
+
+.page-background {
+  background: $white;
+  border: 1px solid map-get($theme-colors, light);
+  border-radius: 0.5rem;
 }

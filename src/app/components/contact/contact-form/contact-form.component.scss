@@ -1,0 +1,24 @@
+@import 'src/styles/import';
+
+$br: 0.5rem;
+
+header {
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: map-get($theme-colors, primary);
+  color: $white;
+  background: map-get($theme-colors, primary);
+  border-radius: $br $br 0 0;
+}
+
+main {
+  border-left: 1px solid map-get($theme-colors, light);
+  border-right: 1px solid map-get($theme-colors, light);
+  background: $white;
+}
+
+footer {
+  margin-bottom: 2rem;
+  border-radius: 0 0 $br $br;
+}

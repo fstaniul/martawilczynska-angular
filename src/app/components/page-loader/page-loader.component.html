@@ -1,0 +1,18 @@
+<ng-container [ngSwitch]="state">
+  <div class="page-container--900" *ngSwitchCase="'error'">
+    <app-alert type="danger" [title]="'page.loader.error.title' | translate">
+      <p translate="page.loader.error.message"></p>
+      <button class="btn btn-danger" (click)="reload.next()">
+        <i class="fas fa-undo fa-fw mr-1"></i>
+        <span translate="page.loader.error.reload-button"></span>
+      </button>
+      <p>
+        {{error | json}}
+      </p>
+    </app-alert>
+  </div>
+
+  <ng-content *ngSwitchCase="'success'"></ng-content>
+
+  <app-animated-loader *ngSwitchCase="'loading'" class="d-block text-center mt-4" additionalClasses="fa-3x text-primary"></app-animated-loader>
+</ng-container>

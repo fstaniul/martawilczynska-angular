@@ -1,0 +1,19 @@
+@import './import';
+
+.btn-rounded {
+  border-radius: 1000px;
+}
+
+@each $name, $color in $theme-colors {
+  .btn-outline-#{$name}--custom {
+    background: $white;
+    border-color: $color;
+    color: $color !important;
+
+    &:hover {
+      color: $white !important;
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}

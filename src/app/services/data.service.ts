@@ -2,19 +2,37 @@ import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Observable, of, concat } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
+export interface HttpGetOptions {
+  headers?:
+    | HttpHeaders
+    | {
+        [header: string]: string | string[];
+      };
+  observe?: 'body';
+  params?:
+    | HttpParams
+    | {
+        [param: string]: string | string[];
+      };
+  reportProgress?: boolean;
+  responseType: 'arraybuffer';
+  withCredentials?: boolean;
+}
 
 export interface DataGetOptions {
   suffix?: string;
   prefix?: string;
   localized?: boolean;
+  httpOptions?: HttpGetOptions;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  private _cache: any;
+  private _cache: any = {};
 
   constructor(
     private translateService: TranslateService,

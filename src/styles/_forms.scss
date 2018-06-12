@@ -1,0 +1,63 @@
+@import './import';
+
+.floating-label {
+  position: relative;
+  margin-bottom: 0.5rem;
+
+  .floating-input {
+    background: none;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border: none;
+    border-bottom: 2px solid map-get($theme-colors, light);
+    width: 100%;
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+      color: map-get($theme-colors, secondary);
+    }
+
+    &:focus {
+      border-color: map-get($theme-colors, primary);
+      & ~ label {
+        color: map-get($theme-colors, primary);
+      }
+      &::placeholder {
+        opacity: 1;
+      }
+    }
+
+    &.ng-touched.ng-invalid,
+    &.ng-dirty.ng-invalid {
+      border-color: map-get($theme-colors, danger);
+      & ~ label {
+        color: map-get($theme-colors, danger);
+      }
+    }
+
+    &.centered {
+      text-align: center;
+      &::placeholder {
+        text-align: center;
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    cursor: text;
+    color: map-get($theme-colors, secondary);
+    transition: all 300ms;
+  }
+
+  .floating-input:focus ~ label,
+  .floating-input.not-empty ~ label {
+    transform: translate(0);
+    top: 100%;
+    left: 0;
+    font-size: 12px;
+  }
+}

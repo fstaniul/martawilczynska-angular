@@ -10,5 +10,14 @@
 		"office-and-staff": "",
 		"reviews": "",
 		"surgical-procedures": ""
+	},
+	"page": {
+		"loader": {
+			"error": {
+				"message": "",
+				"reload-button": "",
+				"title": ""
+			}
+		}
 	}
 }

@@ -10,5 +10,15 @@
     "office-and-staff": "Office & Staff",
     "reviews": "Reviews",
     "surgical-procedures": "Surgical Procedures"
+  },
+  "page": {
+    "loader": {
+      "error": {
+        "message":
+          "Error occurred while loading this page content. Please check Your internet connection and try again! We are sorry for any inconvenience it may have caused.",
+        "reload-button": "Try to load again!",
+        "title": "Ohh no! Error..."
+      }
+    }
   }
 }

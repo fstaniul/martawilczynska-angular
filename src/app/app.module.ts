@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -21,6 +22,11 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { TitleService } from './services/title.service';
 import { DataService } from './services/data.service';
+import { AlertComponent } from './components/alert/alert.component';
+import { PageLoaderComponent } from './components/page-loader/page-loader.component';
+import { AnimatedLoaderComponent } from './components/page-loader/animated-loader/animated-loader.component';
+import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { NotEmptyDirective } from './directives/forms/not-empty.directive';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -40,11 +46,17 @@ export function translateLoaderFactory(http: HttpClient) {
     LogoComponent,
     OfficeAndStaffComponent,
     HomeComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    AlertComponent,
+    PageLoaderComponent,
+    AnimatedLoaderComponent,
+    ContactFormComponent,
+    NotEmptyDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     TranslateModule.forRoot({
       loader: {

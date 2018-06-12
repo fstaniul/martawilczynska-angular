@@ -1,3 +1,30 @@
-<p>
-  home works!
-</p>
+<app-page-loader [loading]="loading" [loaded]="loaded" [error]="error" (reload)="reload()">
+  <div class="page-container--1200" *ngIf="loaded && !error">
+    <div class="page-background content__container position-relative">
+      <img src="/assets/img/marta.png" alt="Marta Wilczyńska Image" class="marta-image" />
+      <div class="d-flex justify-content-center align-items-center content__header">
+        <app-logo></app-logo>
+      </div>
+      <div [innerHTML]="content.content" class="px-3 mt-3"></div>
+      <div class="content__buttons--container">
+        <div class="container-fluid">
+          <div class="form-row">
+            <div class="col-12 col-sm-6">
+              <a class="btn btn-block btn-outline-primary--custom btn-rounded">
+                <i class="fas fa-heartbeat fa-fw mr-1"></i>
+                <span translate="home.buttons.surgical-procedures"></span>
+              </a>
+            </div>
+            <div class="d-block d-sm-none w-100 pt-1"></div>
+            <div class="col-12 col-sm-6">
+              <a class="btn btn-block btn-outline-info--custom btn-rounded">
+                <i class="fas fa-envelope fa-fw mr-1"></i>
+                <span translate="home.buttons.contact"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-page-loader>
