@@ -73,7 +73,8 @@
       top: 1.5rem;
     }
 
-    &:focus ~ label {
+    &:focus ~ label,
+    &.not-empty ~ label {
       top: 0;
     }
   }

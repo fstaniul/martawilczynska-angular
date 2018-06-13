@@ -1,20 +1,33 @@
 import {
   Directive,
   HostBinding,
-  HostListener,
-  ElementRef
+  ElementRef,
+  OnDestroy,
+  AfterViewInit,
+  Self
 } from '@angular/core';
+import { NgControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Directive({
   selector: '[appNotEmpty]'
 })
-export class NotEmptyDirective {
+export class NotEmptyDirective implements AfterViewInit, OnDestroy {
   @HostBinding('class.not-empty') addNotEmpty = false;
 
-  constructor(private el: ElementRef) {}
+  private subscription: Subscription;
 
-  @HostListener('input')
-  onInput() {
-    this.addNotEmpty = this.el.nativeElement.value !== '';
+  constructor(private el: ElementRef, @Self() private ngControl: NgControl) {}
+
+  ngAfterViewInit() {
+    this.subscription = this.ngControl.control.valueChanges.subscribe(
+      (value) => {
+        this.addNotEmpty = value && value !== '';
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) this.subscription.unsubscribe();
   }
 }

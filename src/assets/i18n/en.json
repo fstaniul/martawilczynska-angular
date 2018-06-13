@@ -1,6 +1,10 @@
 {
   "contact": {
     "form": {
+      "buttons": {
+        "clear": "Clear form",
+        "submit": "Send e-mail"
+      },
       "email": {
         "errors": {
           "email": "This is not a correct e-mail address!",
