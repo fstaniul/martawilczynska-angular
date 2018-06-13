@@ -1,10 +1,15 @@
 <div class="page-container--1200">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-md-4 col-lg-5">
-        info
+      <div class="col-12 col-md-4 col-lg-4">
+        <p class="text-center text-secondary message" [innerHTML]="'contact.message.clinic' | translate"></p>
+        <p class="text-center text-secondary mb-4 message" [innerHTML]="'contact.message.marta' | translate"></p>
+        <div class="contact-info-display">
+          <app-contact-into></app-contact-into>
+        </div>
       </div>
-      <div class="col-12 col-md-8 col-lg-7">
+      <div class="d-block d-md-none py-3 w-100"></div>
+      <div class="col-12 col-md-8 col-lg-8">
         <app-contact-form></app-contact-form>
       </div>
     </div>

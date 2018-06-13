@@ -1,66 +1,92 @@
 {
-	"contact": {
-		"form": {
-			"buttons": {
-				"clear": "",
-				"submit": ""
-			},
-			"email": {
-				"errors": {
-					"email": "",
-					"required": ""
-				},
-				"label": ""
-			},
-			"heading": "",
-			"message": {
-				"errors": {
-					"maxLength": "",
-					"required": ""
-				},
-				"label": "",
-				"placeholder": ""
-			},
-			"name": {
-				"errors": {
-					"required": ""
-				},
-				"label": ""
-			},
-			"phone": {
-				"errors": {
-					"pattern": "",
-					"required": ""
-				},
-				"label": ""
-			}
-		}
-	},
-	"home": {
-		"buttons": {
-			"contact": "",
-			"surgical-procedures": ""
-		}
-	},
-	"logo": {
-		"subheading": ""
-	},
-	"navigation": {
-		"about-me": "",
-		"contact": "",
-		"drive": "",
-		"home": "",
-		"office-and-staff": "",
-		"reviews": "",
-		"surgical-procedures": ""
-	},
-	"page": {
-		"loader": {
-			"error": {
-				"message": "",
-				"reload-button": "",
-				"title": ""
-			}
-		}
-	}
+  "contact": {
+    "error": {
+      "buttons": {
+        "edit-form": "Edytuj wiadomość",
+        "try-again": "Spróbuj ponownie"
+      },
+      "heading": "Ooo nie!",
+      "message":
+        "Wystąpił błąd podczas próby wysłania wiadomości! Proszę sprawdzić swoje połączenie z internetem. Za wszelkie utrudnienia przepraszamy!"
+    },
+    "form": {
+      "buttons": {
+        "clear": "Wyczyść formularz",
+        "submit": "Wyślij e-mail"
+      },
+      "email": {
+        "errors": {
+          "email": "Ten adres e-mail nie jest poprawny.",
+          "required": "Musisz wpisać adres e-mail."
+        },
+        "label": "Adres e-mail"
+      },
+      "heading": "Skontaktuj się ze mną przez e-mail",
+      "message": {
+        "errors": {
+          "maxLength":
+            "Twoja wiadomość jest zbyt długa. Maxymalna liczba znaków w wiadomości to 2000.",
+          "required": "Musisz wpisać wiadomość."
+        },
+        "label": "Wiadmość",
+        "placeholder": "Wpisz swoją wiadomość tutaj"
+      },
+      "name": {
+        "errors": {
+          "required": "Musisz podać swoje Imię i Nazwisko."
+        },
+        "label": "Imię i Nazwisko"
+      },
+      "phone": {
+        "errors": {
+          "pattern":
+            "Proszę wpisać swój numer telefonu w formacie: +48 123 123 123",
+          "required": "Musisz podać swój numer telefonu."
+        },
+        "label": "Numer telefonu"
+      }
+    },
+    "message": {
+      "clinic":
+        "W celu umówienia wizyty prosimy kontaktować się z <b class=\"text-primary\">NOA Clinic</b>.",
+      "marta":
+        "W każdym innym celu prosimy kontaktować się bezpośrednio z Panią doktor <b class=\"text-primary\">Martą Wilczyńską</b>."
+    },
+    "success": {
+      "buttons": {
+        "write-another": "Napisz kolejną wiadomość."
+      },
+      "heading": "Sukces!",
+      "message": "Wiadomość została wysłana, pozostało oczekiwać odpowiedzi."
+    }
+  },
+  "home": {
+    "buttons": {
+      "contact": "Skontaktuj się ze Mną",
+      "surgical-procedures": "Zobacz zabiegi operacyjne"
+    },
+    "text": ""
+  },
+  "logo": {
+    "subheading": "Specjalista Chirurgii Plastycznej i Ogólnej"
+  },
+  "navigation": {
+    "about-me": "O Mnie",
+    "contact": "Kontakt",
+    "drive": "Dojazd",
+    "home": "Strona Główna",
+    "office-and-staff": "Gabinet i Personel",
+    "reviews": "Opinie",
+    "surgical-procedures": "Zabiegi Operacyjne"
+  },
+  "page": {
+    "loader": {
+      "error": {
+        "message":
+          "Wystąpił błąd podczas ładowania zawartości tej strony. Prosimy sprawdzić swoje połaczenie z internetem. Jeżeli problem występuje po naszej stronie, prosimy powiadomić nas o tym poprzez formularz kontaktowy na stronie. Za wszelkie nieudogodnienia najmocniej przepraszamy!",
+        "reload-button": "Załaduj ponownie!",
+        "title": "O nie! Błąd..."
+      }
+    }
+  }
 }

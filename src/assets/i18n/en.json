@@ -1,68 +1,86 @@
 {
-  "contact": {
-    "form": {
-      "buttons": {
-        "clear": "Clear form",
-        "submit": "Send e-mail"
-      },
-      "email": {
-        "errors": {
-          "email": "This is not a correct e-mail address!",
-          "required": "Write Your e-mail address so You can get a response."
-        },
-        "label": "E-Mail address"
-      },
-      "heading": "Contact Me via E-Mail",
-      "message": {
-        "errors": {
-          "maxLength":
-            "Your message is too long. Maximum number of characters you can write here is 2000.",
-          "required": "Write Your message."
-        },
-        "label": "Message",
-        "placeholder": "Write Your message here..."
-      },
-      "name": {
-        "errors": {
-          "required": "Write Your full name."
-        },
-        "label": "Full Name"
-      },
-      "phone": {
-        "errors": {
-          "pattern": "Please write your phone number as +48 123 123 123",
-          "required": "Your phone number is required."
-        },
-        "label": "Phone number"
-      }
-    }
-  },
-  "home": {
-    "buttons": {
-      "contact": "Contact Me",
-      "surgical-procedures": "Info about surgical procedures"
-    }
-  },
-  "logo": {
-    "subheading": "Specialist in Aestetic & General Surgery"
-  },
-  "navigation": {
-    "about-me": "About Me",
-    "contact": "Contact",
-    "drive": "Drive",
-    "home": "Home",
-    "office-and-staff": "Office & Staff",
-    "reviews": "Reviews",
-    "surgical-procedures": "Surgical Procedures"
-  },
-  "page": {
-    "loader": {
-      "error": {
-        "message":
-          "Error occurred while loading this page content. Please check Your internet connection and try again! We are sorry for any inconvenience it may have caused.",
-        "reload-button": "Try to load again!",
-        "title": "Ohh no! Error..."
-      }
-    }
-  }
+	"contact": {
+		"error": {
+			"buttons": {
+				"edit-form": "",
+				"try-again": ""
+			},
+			"heading": "",
+			"message": ""
+		},
+		"form": {
+			"buttons": {
+				"clear": "Clear form",
+				"submit": "Send e-mail"
+			},
+			"email": {
+				"errors": {
+					"email": "This is not a correct e-mail address!",
+					"required": "Write Your e-mail address so You can get a response."
+				},
+				"label": "E-Mail address"
+			},
+			"heading": "Contact Me via E-Mail",
+			"message": {
+				"errors": {
+					"maxLength": "Your message is too long. Maximum number of characters you can write here is 2000.",
+					"required": "Write Your message."
+				},
+				"label": "Message",
+				"placeholder": "Write Your message here..."
+			},
+			"name": {
+				"errors": {
+					"required": "Write Your full name."
+				},
+				"label": "Full Name"
+			},
+			"phone": {
+				"errors": {
+					"pattern": "Please write your phone number as +48 123 123 123",
+					"required": "Your phone number is required."
+				},
+				"label": "Phone number"
+			}
+		},
+		"message": {
+			"clinic": "",
+			"marta": ""
+		},
+		"success": {
+			"buttons": {
+				"write-another": ""
+			},
+			"heading": "",
+			"message": ""
+		}
+	},
+	"home": {
+		"buttons": {
+			"contact": "Contact Me",
+			"surgical-procedures": "Info about surgical procedures"
+		},
+		"text": ""
+	},
+	"logo": {
+		"subheading": "Specialist in Aestetic & General Surgery"
+	},
+	"navigation": {
+		"about-me": "About Me",
+		"contact": "Contact",
+		"drive": "Drive",
+		"home": "Home",
+		"office-and-staff": "Office & Staff",
+		"reviews": "Reviews",
+		"surgical-procedures": "Surgical Procedures"
+	},
+	"page": {
+		"loader": {
+			"error": {
+				"message": "Error occurred while loading this page content. Please check Your internet connection and try again! We are sorry for any inconvenience it may have caused.",
+				"reload-button": "Try to load again!",
+				"title": "Ohh no! Error..."
+			}
+		}
+	}
 }

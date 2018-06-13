@@ -1,0 +1,10 @@
+@import 'src/styles/import';
+
+.contact-info-display {
+  display: flex;
+  justify-content: center;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: flex-end;
+  }
+}

@@ -15,7 +15,7 @@ export class ContactFormComponent implements OnInit {
   SUCCESS: 2 = 2;
   ERROR: 3 = 3;
 
-  status: 1 | 2 | 3 = 3;
+  status: 1 | 2 | 3 = 1;
 
   form: FormGroup;
 
