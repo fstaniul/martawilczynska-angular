@@ -1,0 +1,13 @@
+@import 'src/styles/import';
+
+.drive-info {
+  background: $white;
+}
+
+.page-height {
+  height: calc(100vh - 100px);
+}
+
+.lbh-image {
+  border: 2px solid map-get($theme-colors, light);
+}

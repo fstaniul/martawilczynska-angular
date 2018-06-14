@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
@@ -29,6 +30,9 @@ import { ContactFormComponent } from './components/contact/contact-form/contact-
 import { NotEmptyDirective } from './directives/forms/not-empty.directive';
 import { InputErrorMessagesComponent } from './components/forms/input-error-messages/input-error-messages.component';
 import { ContactIntoComponent } from './components/contact/contact-into/contact-into.component';
+import { PhotoGaleryComponent } from './components/galeries/photo-galery/photo-galery.component';
+import { DriveInfoComponent } from './components/drive/drive-info/drive-info.component';
+import { CacheService } from './services/cache.service';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -55,10 +59,13 @@ export function translateLoaderFactory(http: HttpClient) {
     ContactFormComponent,
     NotEmptyDirective,
     InputErrorMessagesComponent,
-    ContactIntoComponent
+    ContactIntoComponent,
+    PhotoGaleryComponent,
+    DriveInfoComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
@@ -70,7 +77,7 @@ export function translateLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  providers: [TitleService, DataService],
+  providers: [TitleService, DataService, CacheService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

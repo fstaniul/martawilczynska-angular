@@ -1,0 +1,11 @@
+<div class="d-flex flex-column align-items-center">
+
+  <div class="photo-container" #galery [@animateGalery]="current">
+    <div *ngFor="let photo of renPhotos" [ngStyle]="backgroundImage(photo.src)" class="photo"></div>
+  </div>
+
+  <div class="my-2 d-flex flex-row justify-content-center no-wrap selectors--container" *ngIf="photos.length > 1">
+    <span *ngFor="let photo of photos; let i = index" (click)="next(i)" [class.active]="current === i"></span>
+  </div>
+
+</div>

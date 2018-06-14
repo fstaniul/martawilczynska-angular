@@ -79,6 +79,13 @@
     "reviews": "Opinie",
     "surgical-procedures": "Zabiegi Operacyjne"
   },
+  "office-and-staff": {
+    "buttons": {
+      "see-directions": "Zobacz jak dojechać"
+    },
+    "content":
+      "<p><strong>Klinka spełnia najwyższe, europejskie normy jakościowe. W jego skład wchodzą</strong>:</p><ul><li>sala przygotowawcza</li><li>sala operacyjna</li><li>sale pooperacyjne</li><li>sala opatrunkowa</li><li>poczekalnia</li><li>pomieszczenia techniczne</li><li>Blok operacyjny wyposażony jest w najnowocześniejszy sprzęt chirurgiczny, anestezjologiczny i monitorujący. Zabiegi operacyjne dokonywane są m. in. nowoczesnym sprzętem do odsysania tkanki tłuszczowej tzw. liposukcji, laserami do odnowy biologicznej skóry i bezoperacyjnego usuwania zmarszczek itp.</li></ul><p>W gabinecie zatrudniony jest wysoko wykwalifikowany personel medyczny: anestezjolodzy z II stopniem specjalizacji, pielęgniarki anestezjologiczne, instrumentariuszki z kilkudziesięcioletnim stażem zawodowym.</p><p>W okresie pooperacyjnym pacjenci pozostają pod fachową opieka pielęgniarską.</p>"
+  },
   "page": {
     "loader": {
       "error": {

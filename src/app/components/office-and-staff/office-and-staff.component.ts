@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-office-and-staff',
   templateUrl: './office-and-staff.component.html',
   styleUrls: ['./office-and-staff.component.scss']
 })
-export class OfficeAndStaffComponent implements OnInit {
+export class OfficeAndStaffComponent {
+  constructor(private translateService: TranslateService) {}
 
-  constructor() { }
-
-  ngOnInit() {
+  localizeLink(link: string) {
+    return `/${this.translateService.currentLang}/${link}`;
   }
-
 }

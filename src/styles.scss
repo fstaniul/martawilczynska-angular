@@ -51,3 +51,14 @@ body {
   border: 1px solid map-get($theme-colors, light);
   border-radius: 0.5rem;
 }
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
