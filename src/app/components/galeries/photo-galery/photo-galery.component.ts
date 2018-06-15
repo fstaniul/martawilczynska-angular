@@ -1,9 +1,13 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {
+  Component,
+  OnDestroy,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import { interval, Subject, Subscription } from 'rxjs';
-import { tap, map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
 
-import { CacheService } from '../../../services/cache.service';
 import {
   trigger,
   transition,
@@ -46,36 +50,20 @@ const animateGalery = trigger('animateGalery', [
   styleUrls: ['./photo-galery.component.scss'],
   animations: [animateGalery]
 })
-export class PhotoGaleryComponent implements OnInit, OnDestroy {
-  CACHE_PROPERTY = 'office-and-staff-cached-photos';
-  PHOTOS_URL = '/assets/office-and-staff-photos.json';
-
-  photos: PhotoData[] = [];
+export class PhotoGaleryComponent implements OnChanges, OnDestroy {
+  @Input() photos: PhotoData[] = [];
   renPhotos: PhotoData[] = [];
   current = -1;
 
   intervalReset = new Subject<void>();
   intervalSub: Subscription;
 
-  constructor(private httpClient: HttpClient, private cache: CacheService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.photos = this.cache.get(this.CACHE_PROPERTY) || [];
-
-    console.log('Cached: ', this.photos);
-
-    if (this.photos.length === 0) {
-      this.httpClient
-        .get(this.PHOTOS_URL)
-        .pipe(tap((data) => this.cache.save(this.CACHE_PROPERTY, data)))
-        .subscribe((photos: PhotoData[]) => {
-          this.photos = photos;
-          console.log(this.photos);
-          this.insertNext(0);
-          this.startInterval();
-        });
-    } else {
-      this.insertNext(0);
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.photos) {
+      this.intervalReset.next();
+      this.next(0);
       this.startInterval();
     }
   }

@@ -1,3 +1,13 @@
-<p>
-  about-me works!
-</p>
+<div class="page-container--900">
+  <div class="about-me-content position-relative page-background">
+    <img src="/assets/img/marta.png" alt="Marta Wilczyńska" class="image">
+    <div class="d-flex flex-row justify-content-center align-items-center header">
+      <app-logo></app-logo>
+    </div>
+    <p class="px-3 mt-3" translate="about-me.text.info"></p>
+    <app-quote [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
+    <p class="px-3" translate="about-me.text.invitation"></p>
+    <p class="px-3 text-right">Marta Wilczyńska</p>
+  </div>
+</div>
+<app-carousel-galery class="d-block mt-3"></app-carousel-galery>

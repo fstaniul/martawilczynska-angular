@@ -9,10 +9,12 @@
     <button class="close-button" type="button" (click)="navOpen = false">
       <i class="fas fa-times fa-fw fa-lg"></i>
     </button>
-    <a *ngFor="let navItem of navItems" class="nav-link" [routerLink]="localizePath(navItem.path)" routerLinkActive="active">
+    <a *ngFor="let navItem of navItems" class="nav-link" [routerLink]="localizePath(navItem.path)" routerLinkActive="active"
+      (click)="navOpen = false">
       <i class="fa-fw" [ngClass]="navItem.iconClass"></i>
       {{navItem.translateString | translate}}
     </a>
   </nav>
 </div>
 <div class="dummy-space"></div>
+<div class="mask d-lg-none" *ngIf="navOpen" (click)="navOpen = false"></div>

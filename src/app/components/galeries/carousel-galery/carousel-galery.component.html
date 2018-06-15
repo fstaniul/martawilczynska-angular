@@ -1,0 +1,15 @@
+<div class="carousel-container position-relative" #carouselContainer>
+  <div class="carousel d-flex flex-row no-wrap" [ngStyle]="carouselStyle" #carousel>
+    <div *ngFor="let element of renElements" class="carousel-element" [style.width]="elementWidth">
+      <div class="d-flex justify-content-center align-items-center w-100 h-100">
+        {{element}}
+      </div>
+    </div>
+  </div>
+  <div class="arrow-button left d-flex align-items-center" (click)="left()">
+    <i class="fas fa-angle-left fa-3x text-black"></i>
+  </div>
+  <div class="arrow-button right d-flex align-items-center" (click)="right()">
+    <i class="fas fa-angle-right fa-3x text-black"></i>
+  </div>
+</div>

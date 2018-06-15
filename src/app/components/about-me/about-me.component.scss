@@ -1,0 +1,34 @@
+@import 'src/styles/import';
+
+.about-me-content {
+  margin-top: 75px;
+  padding-top: 85px;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 150px;
+    padding-top: 0;
+  }
+}
+
+.image {
+  position: absolute;
+  top: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+
+  @include media-breakpoint-up(lg) {
+    width: 250px;
+    height: 250px;
+    top: -125px;
+    left: 16px;
+    transform: translateX(0);
+  }
+}
+
+.header {
+  @include media-breakpoint-up(lg) {
+    height: 125px;
+  }
+}

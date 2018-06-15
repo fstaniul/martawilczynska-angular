@@ -33,6 +33,8 @@ import { ContactIntoComponent } from './components/contact/contact-into/contact-
 import { PhotoGaleryComponent } from './components/galeries/photo-galery/photo-galery.component';
 import { DriveInfoComponent } from './components/drive/drive-info/drive-info.component';
 import { CacheService } from './services/cache.service';
+import { QuoteComponent } from './components/utils/quote/quote.component';
+import { CarouselGaleryComponent } from './components/galeries/carousel-galery/carousel-galery.component';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -61,7 +63,9 @@ export function translateLoaderFactory(http: HttpClient) {
     InputErrorMessagesComponent,
     ContactIntoComponent,
     PhotoGaleryComponent,
-    DriveInfoComponent
+    DriveInfoComponent,
+    QuoteComponent,
+    CarouselGaleryComponent
   ],
   imports: [
     BrowserModule,
