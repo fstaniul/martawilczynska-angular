@@ -51,4 +51,24 @@
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
+  cursor: pointer;
+}
+
+.steps {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 10px;
+}
+
+.step {
+  width: 10px;
+  height: 2px;
+  margin: 0 2px;
+  background: $secondary;
+
+  &.active {
+    background: $primary;
+  }
 }

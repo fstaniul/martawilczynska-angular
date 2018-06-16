@@ -7,7 +7,9 @@ import {
   ElementRef,
   AfterViewInit,
   SimpleChanges,
-  OnDestroy
+  OnDestroy,
+  EventEmitter,
+  Output
 } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
@@ -22,11 +24,16 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
   @Input() elements: any[];
   @Input() elementMinWidth = 200;
   @Input() template: any;
+  @Input() hideSteps = false;
+  @Output('elementClick') elementClick = new EventEmitter<number>();
 
   @ViewChild('carouselContainer') carouselContainer: ElementRef;
   @ViewChild('carousel') carousel: ElementRef;
 
-  viewElements = [];
+  viewElements: {
+    id: number;
+    element: any;
+  }[] = [];
   firstElementIndex = 0;
   elementsDisplayed = 1;
   elementWidth = '200px';
@@ -86,19 +93,19 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
         let index = startIndex + i;
         if (index < 0) {
           index = this.elements.length - (Math.abs(index) % this.elements.length);
-        } else {
-          index = index % this.elements.length;
         }
-        this.viewElements.push(this.elements[index]);
+        index = index % this.elements.length;
+        this.viewElements.push({ id: index, element: this.elements[index] });
       }
     } else {
-      this.viewElements = this.elements;
+      this.viewElements = this.elements.map((element, id) => ({ id, element }));
     }
   }
 
   templateContext(element) {
     return {
-      element
+      element: element.element,
+      index: element.id
     };
   }
 
@@ -128,6 +135,7 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
 
         animation.onDone(() => {
           this.firstElementIndex += this.elementsDisplayed * modifier;
+          this.firstElementIndex = this.firstElementIndex % this.elements.length;
           this.populateView();
           animation.reset();
           animation.destroy();
@@ -150,7 +158,20 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
   }
 
   get carouselWidth(): number {
-    if (!this.carouselContainer) return null;
     return (this.carouselContainer.nativeElement as HTMLElement).clientWidth - 60;
+  }
+
+  get steps() {
+    if (!this.initialized) return [];
+    const steps = Math.ceil(this.elements.length / this.elementsDisplayed);
+    const ret = [];
+    for (let i = 0; i < steps; i++) ret.push(i);
+    return ret;
+  }
+
+  get currentStep() {
+    if (!this.initialized) return 0;
+
+    return Math.floor(this.firstElementIndex / this.elementsDisplayed);
   }
 }

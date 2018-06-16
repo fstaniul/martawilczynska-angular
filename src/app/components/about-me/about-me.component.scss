@@ -37,3 +37,14 @@
   padding: 1rem 0 1rem 0;
   margin-top: 3rem;
 }
+
+.certificate {
+  img {
+    border: 1px solid $secondary;
+    border-radius: 0.375rem;
+
+    &:hover {
+      border-color: $primary;
+    }
+  }
+}

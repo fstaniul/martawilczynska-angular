@@ -11,22 +11,11 @@
   </div>
 </div>
 
-<!-- <div class="certificates-container">
-  <h1 class="text-center niconne" translate="about-me.certificates.title"></h1>
-  <app-page-loader [loading]="!verticalCertificates" [loaded]="verticalCertificates">
-    <app-carousel-galery class="d-block mt-3" [minWidth]="200" [elements]="verticalCertificates" *ngIf="verticalCertificates"
-      (elementClick)="clickOnCertificate($event)"></app-carousel-galery>
-  </app-page-loader>
-  <app-page-loader [loading]="!horizontalCertificates" [loaded]="horizontalCertificates">
-    <app-carousel-galery class="d-block mt-3" [minWidth]="250" [elements]="horizontalCertificates" *ngIf="horizontalCertificates"
-      (elementClick)="clickOnCertificate($event)"></app-carousel-galery>
-  </app-page-loader>
-</div> -->
-
-<app-better-carousel [elements]="[1, 2, 3, 4, 5, 6, 7, 8, 9]" [template]="carouselTemplate"></app-better-carousel>
+<app-better-carousel [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
+<app-better-carousel [elements]="horizontalCertificates" [template]="carouselTemplate" [elementMinWidth]="250" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
 
 <ng-template #carouselTemplate let-element="element">
-  <div class="d-flex justify-content-center align-items-center" style="height: 100px; width: 100%; color: white; background: black; border: 1px dashed white;">
-    {{element}}
+  <div class="px-1 w-100 h-auto certificate">
+    <img class="w-100 h-auto" [src]="element.src" [alt]="element.alt" />
   </div>
 </ng-template>
