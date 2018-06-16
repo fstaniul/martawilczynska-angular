@@ -1,4 +1,11 @@
 {
+	"about-me": {
+		"text": {
+			"info": "",
+			"invitation": "",
+			"quote": ""
+		}
+	},
 	"contact": {
 		"error": {
 			"buttons": {
@@ -53,6 +60,11 @@
 			},
 			"heading": "",
 			"message": ""
+		}
+	},
+	"drive": {
+		"buttons": {
+			"show-directions": ""
 		}
 	},
 	"home": {

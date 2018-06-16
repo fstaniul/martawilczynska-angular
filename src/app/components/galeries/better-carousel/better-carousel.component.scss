@@ -1,0 +1,54 @@
+@import 'src/styles/import';
+
+.arrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background: rgba($light, 0.8);
+  cursor: pointer;
+
+  @include media-breakpoint-up(lg) {
+    opacity: 0;
+  }
+
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0 30px;
+
+  @include media-breakpoint-up(lg) {
+    &:hover {
+      .arrow {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.carousel-item {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+}

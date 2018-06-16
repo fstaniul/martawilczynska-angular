@@ -4,16 +4,16 @@ import {
   ViewChild,
   ElementRef,
   OnDestroy,
-  AfterContentInit
+  AfterContentInit,
+  EventEmitter,
+  Output,
+  OnChanges,
+  SimpleChanges,
+  AfterViewInit
 } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import {
-  AnimationBuilder,
-  style,
-  animate,
-  AnimationFactory
-} from '@angular/animations';
+import { AnimationBuilder, style, animate, AnimationFactory } from '@angular/animations';
 
 export interface CarouselElement {
   src: string;
@@ -25,9 +25,10 @@ export interface CarouselElement {
   templateUrl: './carousel-galery.component.html',
   styleUrls: ['./carousel-galery.component.scss']
 })
-export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
+export class CarouselGaleryComponent implements AfterContentInit, OnDestroy, OnChanges {
   @Input() minWidth = 200;
   @Input() elements: any[] = [];
+  @Output('elementClick') elementClick = new EventEmitter<any>();
 
   @ViewChild('carouselContainer') carouselContainerRef: ElementRef;
   @ViewChild('carousel') carouselRef: ElementRef;
@@ -37,7 +38,6 @@ export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
   elementCount = 0;
   currentPosition = 0;
   renElements: CarouselElement[] = [];
-  transitionTime = 600;
 
   animateLeft: AnimationFactory;
   animateRight: AnimationFactory;
@@ -45,15 +45,9 @@ export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
 
   private resizeSub: Subscription;
 
-  constructor(private animationBuilder: AnimationBuilder) {
-    this.elements = [];
-    for (let i = 0; i < 100; i++) {
-      this.elements[i] = i;
-    }
-  }
+  constructor(private animationBuilder: AnimationBuilder) {}
 
   ngAfterContentInit() {
-    this.move = this.carouselWidth;
     this.computeSize();
     this.resizeSub = fromEvent(window, 'resize')
       .pipe(debounceTime(400))
@@ -64,22 +58,31 @@ export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
     if (this.resizeSub) this.resizeSub.unsubscribe();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.elements) {
+      this.currentPosition = 0;
+      this.renElements = this.getFromArr(
+        this.elements,
+        this.currentPosition - this.elementCount,
+        this.elementCount * 3
+      );
+    }
+  }
+
   computeSize() {
     this.elementCount = Math.floor(this.carouselWidth / this.minWidth);
     this.elementWidth = this.carouselWidth / this.elementCount + 'px';
 
     if (this.currentPosition < this.elementCount) this.currentPosition = 0;
 
-    this.renElements = this.getFromArr(
-      this.elements,
-      this.currentPosition - this.elementCount,
-      this.elementCount * 3
-    );
+    this.renElements = this.getFromArr(this.elements, this.currentPosition - this.elementCount, this.elementCount * 3);
     this.move = -this.carouselWidth;
     this.rebuildAnimations(this.carouselWidth);
   }
 
   getFromArr(arr: any[], start: number, count: number) {
+    if (!arr || arr.length === 0) return [];
+
     const ret = [];
     for (let i = 0; i < count; i++) {
       let index = start + i;
@@ -98,10 +101,7 @@ export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
     this.playAnimation(this.animateLeft, -this.elementCount);
   }
 
-  playAnimation(
-    animation: AnimationFactory,
-    currentPositionDifferance: number
-  ) {
+  playAnimation(animation: AnimationFactory, currentPositionDifferance: number) {
     if (this.playing) return;
     this.playing = true;
 
@@ -131,10 +131,7 @@ export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
 
     this.animateRight = this.animationBuilder.build([
       style({ transform: `translateX(-${carouselWidth}px` }),
-      animate(
-        duration,
-        style({ transform: `translateX(-${carouselWidth * 2}px)` })
-      )
+      animate(duration, style({ transform: `translateX(-${carouselWidth * 2}px)` }))
     ]);
   }
 
@@ -145,6 +142,6 @@ export class CarouselGaleryComponent implements AfterContentInit, OnDestroy {
   }
 
   get carouselWidth() {
-    return this.carouselContainerRef.nativeElement.clientWidth - 56;
+    return (this.carouselContainerRef.nativeElement.clientWidth || window.innerWidth) - 56;
   }
 }

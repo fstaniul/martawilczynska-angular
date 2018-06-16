@@ -35,6 +35,7 @@ import { DriveInfoComponent } from './components/drive/drive-info/drive-info.com
 import { CacheService } from './services/cache.service';
 import { QuoteComponent } from './components/utils/quote/quote.component';
 import { CarouselGaleryComponent } from './components/galeries/carousel-galery/carousel-galery.component';
+import { BetterCarouselComponent } from './components/galeries/better-carousel/better-carousel.component';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -65,7 +66,8 @@ export function translateLoaderFactory(http: HttpClient) {
     PhotoGaleryComponent,
     DriveInfoComponent,
     QuoteComponent,
-    CarouselGaleryComponent
+    CarouselGaleryComponent,
+    BetterCarouselComponent
   ],
   imports: [
     BrowserModule,

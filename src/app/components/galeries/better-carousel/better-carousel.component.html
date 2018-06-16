@@ -1,0 +1,13 @@
+<div class="carousel-container position-relative w-100" #carouselContainer *ngIf="elements">
+  <div class="carousel" #carousel [style.transform]="carouselTransform">
+    <div *ngFor="let e of viewElements" [style.width]="elementWidth" class="carousel-item">
+      <ng-container *ngTemplateOutlet="template; context: templateContext(e)"></ng-container>
+    </div>
+  </div>
+  <div class="arrow left" *ngIf="displayCarousel" (click)="moveLeft()">
+    <i class="fas fa-angle-left"></i>
+  </div>
+  <div class="arrow right" *ngIf="displayCarousel" (click)="moveRight()">
+    <i class="fas fa-angle-right"></i>
+  </div>
+</div>

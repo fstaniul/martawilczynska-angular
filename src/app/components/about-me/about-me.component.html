@@ -4,10 +4,29 @@
     <div class="d-flex flex-row justify-content-center align-items-center header">
       <app-logo></app-logo>
     </div>
-    <p class="px-3 mt-3" translate="about-me.text.info"></p>
+    <div [innerHTML]="'about-me.text.info' | translate" class="px-3 mt-3"></div>
     <app-quote [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
     <p class="px-3" translate="about-me.text.invitation"></p>
     <p class="px-3 text-right">Marta Wilczyńska</p>
   </div>
 </div>
-<app-carousel-galery class="d-block mt-3"></app-carousel-galery>
+
+<!-- <div class="certificates-container">
+  <h1 class="text-center niconne" translate="about-me.certificates.title"></h1>
+  <app-page-loader [loading]="!verticalCertificates" [loaded]="verticalCertificates">
+    <app-carousel-galery class="d-block mt-3" [minWidth]="200" [elements]="verticalCertificates" *ngIf="verticalCertificates"
+      (elementClick)="clickOnCertificate($event)"></app-carousel-galery>
+  </app-page-loader>
+  <app-page-loader [loading]="!horizontalCertificates" [loaded]="horizontalCertificates">
+    <app-carousel-galery class="d-block mt-3" [minWidth]="250" [elements]="horizontalCertificates" *ngIf="horizontalCertificates"
+      (elementClick)="clickOnCertificate($event)"></app-carousel-galery>
+  </app-page-loader>
+</div> -->
+
+<app-better-carousel [elements]="[1, 2, 3, 4, 5, 6, 7, 8, 9]" [template]="carouselTemplate"></app-better-carousel>
+
+<ng-template #carouselTemplate let-element="element">
+  <div class="d-flex justify-content-center align-items-center" style="height: 100px; width: 100%; color: white; background: black; border: 1px dashed white;">
+    {{element}}
+  </div>
+</ng-template>
