@@ -66,7 +66,11 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
     setTimeout(() => {
       this.initialized = true;
       this.calculateElementsWidth();
-    }, 0);
+      setTimeout(() => {
+        // runs another check in case that scroll bar is shown :)
+        this.calculateElementsWidth();
+      }, 1);
+    }, 1);
   }
 
   ngOnDestroy(): void {
@@ -135,6 +139,7 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
 
         animation.onDone(() => {
           this.firstElementIndex += this.elementsDisplayed * modifier;
+          if (this.firstElementIndex < 0) this.firstElementIndex = this.elements.length + this.firstElementIndex;
           this.firstElementIndex = this.firstElementIndex % this.elements.length;
           this.populateView();
           animation.reset();
@@ -153,8 +158,15 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
     };
   }
 
-  get carouselTransform() {
-    return this.displayCarousel ? `translateX(-${this.carouselWidth}px)` : 'translateX(0)';
+  carouselTransform() {
+    if (!this.displayCarousel || !this.carouselContainer || !this.carouselContainer.nativeElement) {
+      return {
+        transform: `translateX(0)`
+      };
+    }
+    return {
+      transform: `translateX(-${this.carouselWidth}px)`
+    };
   }
 
   get carouselWidth(): number {
@@ -171,7 +183,6 @@ export class BetterCarouselComponent implements OnInit, OnChanges, AfterViewInit
 
   get currentStep() {
     if (!this.initialized) return 0;
-
     return Math.floor(this.firstElementIndex / this.elementsDisplayed);
   }
 }

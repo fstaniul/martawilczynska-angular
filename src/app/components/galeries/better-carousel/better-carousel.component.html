@@ -2,7 +2,7 @@
   <div *ngFor="let i of steps" class="step" [class.active]="currentStep === i"></div>
 </div>
 <div class="carousel-container position-relative w-100" #carouselContainer *ngIf="elements">
-  <div class="carousel" #carousel [style.transform]="carouselTransform" [class.justify-content-center]="!displayCarousel">
+  <div class="carousel" #carousel [ngStyle]="carouselTransform()" [class.justify-content-center]="!displayCarousel">
     <div *ngFor="let e of viewElements" [style.width]="elementWidth" class="carousel-item" (click)="elementClick.next(e.id)">
       <ng-container *ngTemplateOutlet="template; context: templateContext(e)"></ng-container>
     </div>
