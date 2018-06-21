@@ -29,9 +29,9 @@
   color: map-get($theme-colors, light);
   padding: 0.5rem 1.5rem;
 
-  &:hover:not(.language-switcher),
-  &.active:not(.language-switcher),
-  &:active:not(.language-switcher) {
+  &:hover,
+  &.active,
+  &:active {
     @include media-breakpoint-down(md) {
       background: rgba($white, 0.3);
     }
@@ -44,7 +44,7 @@
 
     &:hover,
     &:active,
-    &.active:not(.language-switcher) {
+    &.active {
       color: map-get($theme-colors, primary);
     }
   }

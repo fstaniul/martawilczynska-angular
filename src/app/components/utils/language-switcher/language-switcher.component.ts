@@ -32,6 +32,10 @@ export class LanguageSwitcherComponent implements OnInit {
     } else return `/${language}/${chunks.slice(2).join('/')}`;
   }
 
+  isCurrentLang(language: string) {
+    return this.translateService.currentLang === language;
+  }
+
   get languages() {
     return this.translateService.langs;
   }

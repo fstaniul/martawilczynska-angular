@@ -32,12 +32,8 @@ export class SurgicalProceduresComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    console.log(this.translateService.currentLang);
-
     this._dataSubscription = this.dataService.get('surgical-procedures').subscribe((content) => {
-      console.log(this.translateService.currentLang);
       this.procedures = content;
-      console.log(this.procedures);
     });
 
     this._paramsSubscription = this.activatedRoute.params.subscribe((params) => {
@@ -68,10 +64,12 @@ export class SurgicalProceduresComponent implements OnInit, OnDestroy {
   get procedureKeys() {
     if (!this.procedures) return [];
     return Object.keys(this.procedures).sort((a: string, b: string) => {
-      const aOrder = this.procedures[a].order || Infinity;
-      const bOrder = this.procedures[b].order || Infinity;
+      const aOrder = typeof this.procedures[a].order !== 'undefined' ? this.procedures[a].order : Infinity;
+      const bOrder = typeof this.procedures[b].order !== 'undefined' ? this.procedures[b].order : Infinity;
 
-      return bOrder - aOrder;
+      if (aOrder < bOrder) return -1;
+      else if (aOrder > bOrder) return 1;
+      return 0;
     });
   }
 }

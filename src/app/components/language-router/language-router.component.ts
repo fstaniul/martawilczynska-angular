@@ -32,7 +32,9 @@ export class LanguageRouterComponent implements OnInit, OnDestroy {
 
   setLanguage(lang: string) {
     if (this.translateService.langs.includes(lang)) {
-      this.translateService.use(lang);
+      if (this.translateService.currentLang !== lang) {
+        this.translateService.use(lang);
+      }
     } else {
       this.router.navigate([this.translateService.defaultLang]);
     }

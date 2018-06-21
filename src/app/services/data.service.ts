@@ -68,7 +68,6 @@ export class DataService {
     }
 
     return this.getFromHttp(contentType, options, language).pipe(
-      takeUntil(this.translateService.onLangChange),
       tap((data) => this.saveInCache(contentType, options, data, language))
     );
   }
