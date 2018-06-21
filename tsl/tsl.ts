@@ -15,3 +15,5 @@ _('contact.form.phone.errors.required');
 _('contact.form.phone.errors.pattern');
 _('contact.form.message.errors.required');
 _('contact.form.message.errors.maxLength');
+_('contact.form.subject.errors.maxLength');
+_('contact.form.subject.errors.required');

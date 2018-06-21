@@ -32,6 +32,15 @@
         </div>
 
         <div class="form-group">
+          <div class="floating-label">
+            <input name="subject" type="text" id="subject-input" class="floating-input" [placeholder]="'form.contact.subject.placeholder' | translate"
+              appNotEmpty formControlName="subject">
+            <label for="subject-input" translate="contact.form.subject.label"></label>
+          </div>
+          <app-input-error-messages [control]="subject" name="subject" prefix="contact.form"></app-input-error-messages>
+        </div>
+
+        <div class="form-group">
           <div class="floating-label mb-0">
             <textarea name="message" id="message-textarea" rows="10" class="floating-input" [placeholder]="'contact.form.message.placeholder' | translate"
               appNotEmpty formControlName="message"></textarea>

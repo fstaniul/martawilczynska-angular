@@ -15,14 +15,13 @@ export class LanguageRouterComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private translateService: TranslateService,
     private router: Router
-  ) {
-    this.paramsChange = this.paramsChange.bind(this);
-  }
+  ) {}
 
   ngOnInit() {
-    this.paramsSubscription = this.activatedRoute.params.subscribe(
-      this.paramsChange
-    );
+    this.paramsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
+      this.setLanguage(params.language);
+    });
+    this.setLanguage(this.activatedRoute.snapshot.params.language);
   }
 
   ngOnDestroy() {
@@ -31,16 +30,11 @@ export class LanguageRouterComponent implements OnInit, OnDestroy {
     }
   }
 
-  paramsChange(params: Params) {
-    if (
-      params.language &&
-      params.language !== this.translateService.currentLang
-    ) {
-      if (this.translateService.langs.includes(params.language)) {
-        this.translateService.use(params.language);
-      } else {
-        this.router.navigate([this.translateService.defaultLang]);
-      }
+  setLanguage(lang: string) {
+    if (this.translateService.langs.includes(lang)) {
+      this.translateService.use(lang);
+    } else {
+      this.router.navigate([this.translateService.defaultLang]);
     }
   }
 }

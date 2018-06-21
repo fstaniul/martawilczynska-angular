@@ -32,9 +32,13 @@ export class SurgicalProceduresComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this._dataSubscription = this.dataService
-      .get('surgical-procedures', { localized: true })
-      .subscribe((content) => (this.procedures = content));
+    console.log(this.translateService.currentLang);
+
+    this._dataSubscription = this.dataService.get('surgical-procedures').subscribe((content) => {
+      console.log(this.translateService.currentLang);
+      this.procedures = content;
+      console.log(this.procedures);
+    });
 
     this._paramsSubscription = this.activatedRoute.params.subscribe((params) => {
       this.selectedProcedure = params.procedure;

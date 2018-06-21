@@ -26,7 +26,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
       translateString: 'navigation.about-me'
     },
     {
-      path: 'surgical-procedures/preparation-before-surgery',
+      path: 'surgical-procedures',
       iconClass: 'fas fa-heartbeat',
       translateString: 'navigation.surgical-procedures'
     },
@@ -62,9 +62,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.scrollSubscription = fromEvent(window, 'scroll').subscribe(
-      this.onScroll
-    );
+    this.scrollSubscription = fromEvent(window, 'scroll').subscribe(this.onScroll);
   }
 
   ngOnDestroy() {

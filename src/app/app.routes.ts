@@ -13,7 +13,7 @@ import { ReviewViewComponent } from './reviews/review-view/review-view.component
 
 export const routes: Routes = [
   {
-    path: ':locale',
+    path: ':language',
     component: LanguageRouterComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -22,6 +22,10 @@ export const routes: Routes = [
       {
         path: 'surgical-procedures/:procedure',
         component: SurgicalProceduresComponent
+      },
+      {
+        path: 'surgical-procedures',
+        redirectTo: 'surgical-procedures/before-the-surgery'
       },
       {
         path: 'office-and-staff',

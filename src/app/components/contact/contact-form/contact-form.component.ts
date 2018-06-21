@@ -25,10 +25,8 @@ export class ContactFormComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      phone: [
-        '',
-        [Validators.required, Validators.pattern(PHONE_NUMBER_PATTERN)]
-      ],
+      phone: ['', [Validators.required, Validators.pattern(PHONE_NUMBER_PATTERN)]],
+      subject: ['', [Validators.required, Validators.maxLength(200)]],
       message: ['', [Validators.required, Validators.maxLength(2000)]]
     });
   }
@@ -43,10 +41,7 @@ export class ContactFormComponent implements OnInit {
 
     this.httpClient
       .post('/api/contact', this.form.value)
-      .subscribe(
-        () => (this.status = this.SUCCESS),
-        () => (this.status = this.ERROR)
-      );
+      .subscribe(() => (this.status = this.SUCCESS), () => (this.status = this.ERROR));
   }
 
   get name() {
@@ -63,6 +58,10 @@ export class ContactFormComponent implements OnInit {
 
   get email() {
     return this.form.get('email');
+  }
+
+  get subject() {
+    return this.form.get('subject');
   }
 
   get disabled() {

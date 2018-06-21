@@ -12,7 +12,7 @@ import { tap } from 'rxjs/operators';
 })
 export class OfficeAndStaffComponent implements OnInit {
   CACHE_PROPERTY = 'office-and-staff-cached-photos';
-  PHOTOS_URL = '/assets/office-and-staff-photos.json';
+  PHOTOS_URL = '/assets/data/office-and-staff-photos.json';
 
   photos: PhotoData[] = [];
 

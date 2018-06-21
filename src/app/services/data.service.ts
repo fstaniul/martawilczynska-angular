@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Observable, of, concat } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap, tap, takeUntil } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 export interface HttpGetOptions {
@@ -34,10 +34,7 @@ export interface DataGetOptions {
 export class DataService {
   private _cache: any = {};
 
-  constructor(
-    private translateService: TranslateService,
-    private httpClient: HttpClient
-  ) {}
+  constructor(private translateService: TranslateService, private httpClient: HttpClient) {}
 
   get(contentType: string, options = this.defaultOptions): Observable<any> {
     options = {
@@ -51,9 +48,7 @@ export class DataService {
       return concat(
         this.getCached(contentType, options),
         this.translateService.onLangChange.pipe(
-          switchMap((event: LangChangeEvent) =>
-            this.getCached(contentType, options, event.lang)
-          )
+          switchMap((event: LangChangeEvent) => this.getCached(contentType, options, event.lang))
         )
       );
     }
@@ -64,11 +59,7 @@ export class DataService {
     options: DataGetOptions,
     language = this.translateService.currentLang
   ): Observable<any> {
-    if (
-      options.localized &&
-      this._cache[contentType] &&
-      this._cache[contentType][language]
-    ) {
+    if (options.localized && this._cache[contentType] && this._cache[contentType][language]) {
       return of(this._cache[contentType][language]);
     }
 
@@ -77,15 +68,12 @@ export class DataService {
     }
 
     return this.getFromHttp(contentType, options, language).pipe(
+      takeUntil(this.translateService.onLangChange),
       tap((data) => this.saveInCache(contentType, options, data, language))
     );
   }
 
-  localizePath(
-    contentType: string,
-    options: DataGetOptions,
-    language = this.translateService.currentLang
-  ) {
+  localizePath(contentType: string, options: DataGetOptions, language = this.translateService.currentLang) {
     if (options.localized) {
       return `${options.prefix}${language}/${contentType}${options.suffix}`;
     } else {
@@ -93,22 +81,11 @@ export class DataService {
     }
   }
 
-  getFromHttp(
-    contentType: string,
-    options: DataGetOptions,
-    language?: string
-  ): Observable<any> {
-    return this.httpClient.get(
-      this.localizePath(contentType, options, language)
-    );
+  getFromHttp(contentType: string, options: DataGetOptions, language?: string): Observable<any> {
+    return this.httpClient.get(this.localizePath(contentType, options, language));
   }
 
-  saveInCache(
-    contentType: string,
-    options: DataGetOptions,
-    data: any,
-    language = this.translateService.currentLang
-  ) {
+  saveInCache(contentType: string, options: DataGetOptions, data: any, language = this.translateService.currentLang) {
     if (options.localized) {
       this._cache = {
         ...this._cache,

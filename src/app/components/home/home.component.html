@@ -4,7 +4,10 @@
     <div class="d-flex justify-content-center align-items-center content__header">
       <app-logo></app-logo>
     </div>
-    <div [innerHTML]="'home.text' | translate" class="px-3 mt-3"></div>
+    <div [innerHTML]="'about-me.text.info' | translate" class="px-3 mt-3"></div>
+    <app-quote [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
+    <p class="px-3" translate="about-me.text.invitation"></p>
+    <p class="px-3 text-right">Marta Wilczyńska</p>
     <div class="content__buttons--container">
       <div class="container-fluid">
         <div class="form-row">
