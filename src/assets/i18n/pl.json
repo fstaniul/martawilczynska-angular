@@ -1,11 +1,14 @@
 {
   "about-me": {
+    "certificates": {
+      "heading": "Certyfikaty",
+      "subheading": "Posiadane przeze mnie certyfikaty."
+    },
     "text": {
       "info":
         "<p>Ukończyłam Pomorską Akademię Medyczną w Szczecinie w 1994r. W latach 1994-2005 pracowałam w Oddziale Chirurgii Ogólnej i Zachodniopomorskim Centrum Leczenia Oparzeń i Chirurgi Plastycznej w Gryficach gdzie uzyskałam specjalizację I i II stopnia oraz tytuł specjalisty z chirurgii ogólnej.</p><p>Od 2005 do 2012 roku pracowałam we wiodącym ośrodku chirurgii plastycznej w Polsce w Klinice Chirurgii Plastycznej w Polanicy Zdroju. Tu kształciłam się pod bacznym okiem profesora Kazimierza Kobusa i dr-a Ireneusza Łątkowskiego W 2010 roku uzyskałam tytuł Specjalisty Chirurgii Plastycznej pod kierunkiem dr Ireneusza Łątkowskiego.</p><p>Chirurgią plastyczną zajmuję się od 1999r. Doświadczenie w swojej specjalności zdobywałam i nadal zdobywam w kraju jak też za granicą.</p><p>Jestem członkiem Polskiego Towarzystwa Chirurgii Plastycznej, Rekonstrukcyjnej i Estetycznej, Towarzystwa Chirurgów Polskich, Polskiego Towarzystwa Leczenia Oparzeń.</p>",
       "invitation": "Zapraszam do konsultacji",
-      "quote":
-        "Spraw, aby każdy dzień miał szanse stać się najpiękniejszym dniem twojego życia"
+      "quote": "Spraw, aby każdy dzień miał szanse stać się najpiękniejszym dniem twojego życia"
     }
   },
   "contact": {
@@ -33,8 +36,7 @@
       "heading": "Skontaktuj się ze mną przez e-mail",
       "message": {
         "errors": {
-          "maxLength":
-            "Twoja wiadomość jest zbyt długa. Maxymalna liczba znaków w wiadomości to 2000.",
+          "maxLength": "Twoja wiadomość jest zbyt długa. Maxymalna liczba znaków w wiadomości to 2000.",
           "required": "Musisz wpisać wiadomość."
         },
         "label": "Wiadmość",
@@ -48,16 +50,14 @@
       },
       "phone": {
         "errors": {
-          "pattern":
-            "Proszę wpisać swój numer telefonu w formacie: +48 123 123 123",
+          "pattern": "Proszę wpisać swój numer telefonu w formacie: +48 123 123 123",
           "required": "Musisz podać swój numer telefonu."
         },
         "label": "Numer telefonu"
       }
     },
     "message": {
-      "clinic":
-        "W celu umówienia wizyty prosimy kontaktować się z <b class=\"text-primary\">NOA Clinic</b>.",
+      "clinic": "W celu umówienia wizyty prosimy kontaktować się z <b class=\"text-primary\">NOA Clinic</b>.",
       "marta":
         "W każdym innym celu prosimy kontaktować się bezpośrednio z Panią doktor <b class=\"text-primary\">Martą Wilczyńską</b>."
     },
@@ -71,7 +71,7 @@
   },
   "drive": {
     "buttons": {
-      "show-directions": ""
+      "show-directions": "Wyznacz trasę"
     }
   },
   "home": {

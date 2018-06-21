@@ -11,8 +11,15 @@
   </div>
 </div>
 
-<app-better-carousel [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
-<app-better-carousel [elements]="horizontalCertificates" [template]="carouselTemplate" [elementMinWidth]="250" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
+<section class="mt-5 certificates-section py-3">
+  <div class="mb-3">
+    <h2 class="niconne text-center mb-0" translate="about-me.certificates.heading"></h2>
+    <small class="text-center d-block text-secondary" translate="about-me.certificates.subheading"></small>
+  </div>
+
+  <app-better-carousel [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
+  <app-better-carousel [elements]="horizontalCertificates" [template]="carouselTemplate" [elementMinWidth]="250" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
+</section>
 
 <ng-template #carouselTemplate let-element="element">
   <div class="px-1 w-100 h-auto certificate">

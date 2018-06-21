@@ -1,3 +1,20 @@
-<p>
-  surgical-procedures works!
-</p>
+<app-page-loader [loading]="!procedures" [loaded]="procedures">
+  <div class="surgical-treatments--container page-container--1200">
+    <div class="nav-container position-relative">
+      <span class="d-block d-lg-none text-primary px-3 py-2 nav-heading" (click)="navOpen = !navOpen">
+        {{currentProcedure.name}}
+        <i class="fas fa-angle-down ml-1 fa-lg" *ngIf="!navOpen"></i>
+        <i class="fas fa-angle-up ml-1 fa-lg" *ngIf="navOpen"></i>
+      </span>
+      <nav class="nav flex-column flex-nowrap" [class.open]="navOpen">
+        <a *ngFor="let procedure of procedureKeys" [routerLink]="procedurePath(procedure)" routerLinkActive="active" class="nav-link"
+          (click)="navOpen = false">
+          <i class="fas fa-angle-right nav-icon"></i>
+          {{procedureText(procedure)}}
+        </a>
+      </nav>
+    </div>
+    <main class="page-background p-3" [innerHTML]="currentProcedure.content">
+    </main>
+  </div>
+</app-page-loader>
