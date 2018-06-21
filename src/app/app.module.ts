@@ -34,6 +34,7 @@ import { QuoteComponent } from './components/utils/quote/quote.component';
 import { CarouselGaleryComponent } from './components/galeries/carousel-galery/carousel-galery.component';
 import { BetterCarouselComponent } from './components/galeries/better-carousel/better-carousel.component';
 import { ReviewsModule } from './reviews/reviews.module';
+import { LanguageSwitcherComponent } from './components/utils/language-switcher/language-switcher.component';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -62,7 +63,8 @@ export function translateLoaderFactory(http: HttpClient) {
     DriveInfoComponent,
     QuoteComponent,
     CarouselGaleryComponent,
-    BetterCarouselComponent
+    BetterCarouselComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,

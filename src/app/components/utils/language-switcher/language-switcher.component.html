@@ -1,0 +1,3 @@
+<a *ngFor="let language of languages" [routerLink]="link(language)" routerLinkActive="active" class="language-flag">
+  <img [src]="flag(language)" [alt]="alt(language)">
+</a>

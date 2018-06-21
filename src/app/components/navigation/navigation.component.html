@@ -14,6 +14,7 @@
       <i class="fa-fw" [ngClass]="navItem.iconClass"></i>
       {{navItem.translateString | translate}}
     </a>
+    <app-language-switcher class="nav-link language-switcher" (click)="navOpen = false"></app-language-switcher>
   </nav>
 </div>
 <div class="dummy-space"></div>

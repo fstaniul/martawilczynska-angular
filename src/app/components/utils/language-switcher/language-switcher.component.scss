@@ -1,0 +1,14 @@
+.language-flag {
+  img {
+    filter: grayscale(100%);
+    transition: all 300ms;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+
+  &.active img {
+    filter: grayscale(0);
+  }
+}
