@@ -31,14 +31,14 @@ export const routes: Routes = [
         path: 'office-and-staff',
         component: OfficeAndStaffComponent
       },
-      {
-        path: 'reviews',
-        component: ReviewsComponent,
-        children: [
-          { path: '', pathMatch: 'full', component: ReviewAddComponent },
-          { path: ':id', component: ReviewViewComponent }
-        ]
-      },
+      // {
+      //   path: 'reviews',
+      //   component: ReviewsComponent,
+      //   children: [
+      //     { path: '', pathMatch: 'full', component: ReviewAddComponent },
+      //     { path: ':id', component: ReviewViewComponent }
+      //   ]
+      // },
       { path: 'drive', component: DriveComponent },
       { path: 'contact', component: ContactComponent },
       { path: '**', redirectTo: 'home' }

@@ -35,11 +35,11 @@ export class NavigationComponent implements OnInit, OnDestroy {
       iconClass: 'fas fa-users',
       translateString: 'navigation.office-and-staff'
     },
-    {
-      path: 'reviews',
-      iconClass: 'fas fa-star',
-      translateString: 'navigation.reviews'
-    },
+    // {
+    //   path: 'reviews',
+    //   iconClass: 'fas fa-star',
+    //   translateString: 'navigation.reviews'
+    // },
     {
       path: 'drive',
       iconClass: 'fas fa-car',
