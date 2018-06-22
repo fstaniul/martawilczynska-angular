@@ -5,7 +5,7 @@
       <app-logo></app-logo>
     </div>
     <div [innerHTML]="'about-me.text.info' | translate" class="px-3 mt-3"></div>
-    <app-quote [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
+    <app-quote class="d-block px-3" [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
     <p class="px-3" translate="about-me.text.invitation"></p>
     <p class="px-3 text-right">Marta Wilczyńska</p>
     <div class="content__buttons--container">
@@ -19,7 +19,7 @@
           </div>
           <div class="d-block d-sm-none w-100 pt-1"></div>
           <div class="col-12 col-sm-6">
-            <a class="btn btn-block btn-outline-info--custom btn-rounded" [routerLink]="contactLink">
+            <a class="btn btn-block btn-info btn-rounded" [routerLink]="contactLink">
               <i class="fas fa-envelope fa-fw mr-1"></i>
               <span translate="home.buttons.contact"></span>
             </a>

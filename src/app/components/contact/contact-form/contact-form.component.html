@@ -77,7 +77,7 @@
     <div class="alert alert-success">
       <h3 translate="contact.success.heading"></h3>
       <p translate="contact.success.message"></p>
-      <button class="btn btn-success">
+      <button class="btn btn-success" (click)="form.reset(); status = PENDING">
         <i class="fas fa-plus fa-fw mr-1"></i>
         <span translate="contact.success.buttons.write-another"></span>
       </button>
@@ -88,11 +88,11 @@
     <div class="alert alert-danger">
       <h3 translate="contact.error.heading"></h3>
       <p translate="contact.error.message"></p>
-      <button class="btn btn-danger mr-2 mb-1">
+      <button class="btn btn-danger mr-2 mb-1" (click)="onSubmit()">
         <i class="fas fa-fw fa-sync mr-1"></i>
         <span translate="contact.error.buttons.try-again"></span>
       </button>
-      <button class="btn btn-outline-danger mb-1">
+      <button class="btn btn-outline-danger mb-1" (click)="status = PENDING">
         <i class="fas fa-pencil-alt fa-fw mr-1"></i>
         <span translate="contact.error.buttons.edit-form"></span>
       </button>

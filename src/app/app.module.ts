@@ -31,10 +31,11 @@ import { PhotoGaleryComponent } from './components/galeries/photo-galery/photo-g
 import { DriveInfoComponent } from './components/drive/drive-info/drive-info.component';
 import { CacheService } from './services/cache.service';
 import { QuoteComponent } from './components/utils/quote/quote.component';
-import { CarouselGaleryComponent } from './components/galeries/carousel-galery/carousel-galery.component';
 import { BetterCarouselComponent } from './components/galeries/better-carousel/better-carousel.component';
 import { ReviewsModule } from './reviews/reviews.module';
 import { LanguageSwitcherComponent } from './components/utils/language-switcher/language-switcher.component';
+import { InitialRedirectComponent } from './components/initial-redirect/initial-redirect.component';
+import { NetflixstyleCarouselGaleryComponent } from './components/galeries/netflixstyle-carousel-galery/netflixstyle-carousel-galery.component';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -62,9 +63,10 @@ export function translateLoaderFactory(http: HttpClient) {
     PhotoGaleryComponent,
     DriveInfoComponent,
     QuoteComponent,
-    CarouselGaleryComponent,
     BetterCarouselComponent,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    InitialRedirectComponent,
+    NetflixstyleCarouselGaleryComponent
   ],
   imports: [
     BrowserModule,

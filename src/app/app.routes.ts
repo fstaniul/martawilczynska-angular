@@ -10,8 +10,13 @@ import { ReviewsModule } from './reviews/reviews.module';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewAddComponent } from './reviews/review-add/review-add.component';
 import { ReviewViewComponent } from './reviews/review-view/review-view.component';
+import { InitialRedirectComponent } from './components/initial-redirect/initial-redirect.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: InitialRedirectComponent
+  },
   {
     path: ':language',
     component: LanguageRouterComponent,
@@ -46,6 +51,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'en'
+    redirectTo: ''
   }
 ];

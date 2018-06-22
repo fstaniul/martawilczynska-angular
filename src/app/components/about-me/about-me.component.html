@@ -5,7 +5,7 @@
       <app-logo></app-logo>
     </div>
     <div [innerHTML]="'about-me.text.info' | translate" class="px-3 mt-3"></div>
-    <app-quote [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
+    <app-quote class="d-block px-3" [text]="'about-me.text.quote' | translate" by="Mark Twain"></app-quote>
     <p class="px-3" translate="about-me.text.invitation"></p>
     <p class="px-3 text-right">Marta Wilczyńska</p>
   </div>
@@ -17,8 +17,11 @@
     <small class="text-center d-block text-secondary" translate="about-me.certificates.subheading"></small>
   </div>
 
-  <app-better-carousel [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
-  <app-better-carousel [elements]="horizontalCertificates" [template]="carouselTemplate" [elementMinWidth]="250" (elementClick)="clickOnCertificate($event)"></app-better-carousel>
+  <!-- <app-better-carousel [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200" (elementClick)="clickOnCertificate($event)"></app-better-carousel> -->
+  <!-- <app-better-carousel [elements]="horizontalCertificates" [template]="carouselTemplate" [elementMinWidth]="250" (elementClick)="clickOnCertificate($event)"></app-better-carousel> -->
+  <app-netflixstyle-carousel-galery class="d-block" [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200"></app-netflixstyle-carousel-galery>
+  <app-netflixstyle-carousel-galery class="d-block mt-3" [elements]="horizontalCertificates" [template]="carouselTemplate"
+    [elementMinWidth]="200"></app-netflixstyle-carousel-galery>`
 </section>
 
 <ng-template #carouselTemplate let-element="element">
@@ -38,4 +41,4 @@
     </div>
     <hr>
   </div>
-</section>
+</section>`

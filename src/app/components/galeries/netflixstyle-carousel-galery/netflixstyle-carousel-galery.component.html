@@ -1,0 +1,20 @@
+<div class="step-container" *ngIf="displayAsCarousel && !hideSteps">
+  <div *ngFor="let step of stepsArry(); let i = index" class="step" [class.active]="i === activeStep" (click)="goToStep(i)"></div>
+</div>
+<div class="carousel-container" #carouselContainer>
+  <div class="carousel" #carousel [ngStyle]="carouselStyle">
+    <ng-container *ngIf="template">
+      <ng-container *ngFor="let viewElement of viewElements">
+        <div class="carousel-element" [style.width]="elementWidth + 'px'">
+          <ng-container *ngTemplateOutlet="template; context:templateContext(viewElement)"></ng-container>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <span class="button left" *ngIf="displayAsCarousel" (click)="left()">
+    <i class="fas fa-angle-left"></i>
+  </span>
+  <span class="button right" *ngIf="displayAsCarousel" (click)="right()">
+    <i class="fas fa-angle-right"></i>
+  </span>
+</div>
