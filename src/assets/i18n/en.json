@@ -68,9 +68,9 @@
       }
     },
     "message": {
-      "clinic": "To arrange an appointment, please contact <strong class=\"text-primary\">NOA Clinic</ strong>.",
+      "clinic": "To arrange an appointment, please contact <strong class=\"text-primary\">NOA&nbsp;Clinic</ strong>.",
       "marta":
-        "For any other purpose, please contact <strong class=\"text-primary\">Dr. Marta Wilczyńska</strong> directly."
+        "For any other purpose, please contact <strong class=\"text-primary\">Dr.&nbsp;Marta&nbsp;Wilczyńska</strong> directly."
     },
     "success": {
       "buttons": {
@@ -88,8 +88,8 @@
   },
   "home": {
     "buttons": {
-      "contact": "Contact Me",
-      "surgical-procedures": "Info about surgical procedures"
+      "contact": "Contact with me",
+      "surgical-procedures": "Information on surgical procedures"
     }
   },
   "logo": {
