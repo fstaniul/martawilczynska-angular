@@ -1,0 +1,13 @@
+<div class="form-group">
+  <div class="mb-3 position-relative">
+    <label class="label" [class.focused]="isFocused" [class.not-empty]="!isEmpty" [class.error]="showError" (click)="input.focus()">{{label}}</label>
+    <input class="input" #input (input)="onChange($event.target.value)" (blur)="onTouched(); onFocused(false)" (focus)="onFocused(true)"
+      [class.focues]="isFocused" [placeholder]="placeholder" [disabled]="disabled" [class.error]="showError">
+  </div>
+  <div *ngIf="showError" class="errors">
+    <span *ngFor="let error of errors">
+      <i class="fas fa-times mr-1"></i>
+      {{translateError(error) | translate}}
+    </span>
+  </div>
+</div>

@@ -1,3 +1,9 @@
-<p>
-  review-add works!
-</p>
+<div class="header">
+  <h4 class="m-0" translate="review.add.heading"></h4>
+</div>
+<div class="form-body">
+  <form [formGroup]="addForm" translatePrefix="review.add.form">
+    <app-floating-input formControlName="name" [label]="'review.add.form.name.label' | translate" placeholder="Will Smith"></app-floating-input>
+    <app-floating-input formControlName="email" [label]="'review.add.form.email.label' | translate" placeholder="will.smith@email.com"></app-floating-input>
+  </form>
+</div>

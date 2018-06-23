@@ -36,6 +36,7 @@ import { ReviewsModule } from './reviews/reviews.module';
 import { LanguageSwitcherComponent } from './components/utils/language-switcher/language-switcher.component';
 import { InitialRedirectComponent } from './components/initial-redirect/initial-redirect.component';
 import { NetflixstyleCarouselGaleryComponent } from './components/galeries/netflixstyle-carousel-galery/netflixstyle-carousel-galery.component';
+import { CustomFormsModule } from './custom-forms/custom-forms.module';
 
 export function translateLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
@@ -81,7 +82,8 @@ export function translateLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    ReviewsModule
+    ReviewsModule,
+    CustomFormsModule
   ],
   providers: [TitleService, DataService, CacheService],
   bootstrap: [AppComponent]

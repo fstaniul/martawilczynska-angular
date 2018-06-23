@@ -7,9 +7,13 @@ import { ReviewViewComponent } from './review-view/review-view.component';
 import { ReviewService } from './services/review.service';
 import { ReviewsDisplayComponent } from './reviews-display/reviews-display.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import { FloatingInputComponent } from '../components/forms/floating-input/floating-input.component';
+import { CustomFormsModule } from '../custom-forms/custom-forms.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule.forChild(), CustomFormsModule],
   declarations: [ReviewComponent, ReviewsComponent, ReviewAddComponent, ReviewViewComponent, ReviewsDisplayComponent],
   providers: [ReviewService]
 })
