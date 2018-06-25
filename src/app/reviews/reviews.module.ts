@@ -9,7 +9,6 @@ import { ReviewsDisplayComponent } from './reviews-display/reviews-display.compo
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { FloatingInputComponent } from '../components/forms/floating-input/floating-input.component';
 import { CustomFormsModule } from '../custom-forms/custom-forms.module';
 
 @NgModule({

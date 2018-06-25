@@ -56,6 +56,7 @@ export class FloatingInputComponent implements OnInit, ControlValueAccessor {
   }
 
   get isEmpty() {
+    // tslint:disable-next-line:triple-equals
     return this.input && this.input.value == '';
   }
 
