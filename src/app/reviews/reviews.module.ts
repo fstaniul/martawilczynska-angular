@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { ReviewComponent } from './review/review.component';
 import { ReviewsComponent } from './reviews.component';
 import { ReviewAddComponent } from './review-add/review-add.component';
@@ -12,8 +14,21 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CustomFormsModule } from '../custom-forms/custom-forms.module';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule.forChild(), CustomFormsModule],
-  declarations: [ReviewComponent, ReviewsComponent, ReviewAddComponent, ReviewViewComponent, ReviewsDisplayComponent],
-  providers: [ReviewService]
+  imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule.forChild(), CustomFormsModule, NgbModule],
+  declarations: [ReviewComponent, ReviewsComponent, ReviewAddComponent, ReviewViewComponent, ReviewsDisplayComponent]
 })
-export class ReviewsModule {}
+export class ReviewsModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ReviewsModule,
+      providers: [ReviewService]
+    };
+  }
+
+  static forChild(): ModuleWithProviders {
+    return {
+      ngModule: ReviewsModule,
+      providers: []
+    };
+  }
+}

@@ -1,9 +1,58 @@
 <div class="header">
-  <h4 class="m-0" translate="review.add.heading"></h4>
+  <h4 class="m-0" translate="reviews.add.heading"></h4>
 </div>
-<div class="form-body">
-  <form [formGroup]="addForm" translatePrefix="review.add.form">
-    <app-floating-input formControlName="name" [label]="'review.add.form.name.label' | translate" placeholder="Will Smith"></app-floating-input>
-    <app-floating-input formControlName="email" [label]="'review.add.form.email.label' | translate" placeholder="will.smith@email.com"></app-floating-input>
+<div class="px-3 pt-3 bg-white border border-top-0 border-light mb-4">
+  <form [formGroup]="addForm" translatePrefix="reviews.add.form" class="form-body" translatePlaceholder="true">
+    <app-input-with-error formControlName="name">
+      <div class="input-group-prepend" inputGroupPrepend>
+        <div class="input-group-text">
+          <i class="fas fa-fw fa-user"></i>
+        </div>
+      </div>
+    </app-input-with-error>
+    <app-input-with-error formControlName="email">
+      <div class="input-group-prepend" inputGroupPrepend>
+        <div class="input-group-text">
+          <i class="fas fa-fw fa-envelope"></i>
+        </div>
+      </div>
+    </app-input-with-error>
+    <app-input-with-error formControlName="phone">
+      <div class="input-group-prepend" inputGroupPrepend>
+        <div class="input-group-text">
+          <i class="fas fa-fw fa-phone"></i>
+        </div>
+      </div>
+    </app-input-with-error>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <i class="fas fa-fw fa-calendar-alt"></i>
+          </div>
+        </div>
+        <input type="text" class="form-control" [placeholder]="'reviews.add.form.visitDate.placeholder' | translate" ngbDatepicker
+          #datepicker="ngbDatepicker" formControlName="visitDate">
+        <div class="input-group-append">
+          <button class="btn btn-outline-dark" (click)="datepicker.toggle()">
+            <i class="fas fa-fw fa-calendar-plus"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <textarea rows="6" class="form-control" [placeholder]="'reviews.add.form.text.placeholder' | translate" formControlName="text"></textarea>
+      <app-error-list [control]="addForm.get('text')" name="text"></app-error-list>
+    </div>
+    <div class="container-fluid">
+      <div class="form-row">
+        <div class="col-12 col-sm-6 offset-sm-6 col-lg-12 offset-lg-0 col-xl-6 offset-xl-6">
+          <button class="btn btn-primary btn-block btn-rounded" type="submit">
+            <i class="fas fa-fw fa-plus-circle mr-1"></i>
+            {{'reviews.add.form.submit' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
   </form>
 </div>

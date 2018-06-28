@@ -1,0 +1,12 @@
+<div class="form-group">
+  <div class="pt-3">
+    <div class="position-relative">
+      <label (click)="textarea.focus()" [class.focused]="focused" [class.not-empty]="!isEmpty()" [class.error]="hasErrors()">
+        {{label}}
+      </label>
+      <textarea [rows]="rows" [cols]="cols" [placeholder]="placeholder" (focus)="onFocus()" (blur)="onBlur()" (input)="onInput($event.target.value)"
+        [disabled]="disabled" [class.error]="hasErrors()" #textarea></textarea>
+    </div>
+  </div>
+  <app-error-list [control]="ngControl" [tslDir]="translatePrefix"></app-error-list>
+</div>

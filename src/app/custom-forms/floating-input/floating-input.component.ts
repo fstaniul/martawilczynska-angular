@@ -11,7 +11,6 @@ import { TranslatePrefixDirective } from '../directives/translate-prefix.directi
 export class FloatingInputComponent implements OnInit, ControlValueAccessor {
   @Input() label;
   @Input() placeholder;
-  @Input() formControlName;
 
   @ViewChild('input') _input: ElementRef;
   onChange: (value: string) => void;
@@ -21,10 +20,10 @@ export class FloatingInputComponent implements OnInit, ControlValueAccessor {
   isFocused = false;
 
   constructor(
-    @Self() private ngControl: NgControl,
+    @Self() public ngControl: NgControl,
     @Optional()
     @Host()
-    private translatePrefix: TranslatePrefixDirective
+    public translatePrefix: TranslatePrefixDirective
   ) {
     ngControl.valueAccessor = this;
   }
@@ -51,6 +50,10 @@ export class FloatingInputComponent implements OnInit, ControlValueAccessor {
     this.isFocused = isFocused;
   }
 
+  hasError() {
+    return !this.control.valid && (this.control.touched || this.control.dirty);
+  }
+
   get input(): HTMLInputElement {
     return this._input && this._input.nativeElement;
   }
@@ -62,18 +65,5 @@ export class FloatingInputComponent implements OnInit, ControlValueAccessor {
 
   get control() {
     return this.ngControl.control;
-  }
-
-  get errors() {
-    return this.ngControl.control.errors && Object.keys(this.ngControl.control.errors);
-  }
-
-  get showError() {
-    return this.control.invalid && (this.control.touched || this.control.dirty);
-  }
-
-  translateError(error: string) {
-    if (!this.translatePrefix) return error;
-    return `${this.translatePrefix.prefix}.${this.formControlName}.errors.${error}`;
   }
 }

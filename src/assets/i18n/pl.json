@@ -64,7 +64,7 @@
           "required": "Musisz podać temat wiadomości!"
         },
         "label": "Temat",
-        "placeholder": ""
+        "placeholder": "Wiadomość..."
       }
     },
     "message": {
@@ -118,6 +118,38 @@
         "reload-button": "Załaduj ponownie!",
         "title": "O nie! Błąd..."
       }
+    }
+  },
+  "reviews": {
+    "add": {
+      "form": {
+        "email": {
+          "errors": {
+            "email": "Musisz podać prawidłowy adres e-mail!",
+            "required": "Adres e-mail jest wymagany!"
+          },
+          "placeholder": "Adres e-mail *"
+        },
+        "name": {
+          "errors": {
+            "required": "Musisz podać swoje Imię i Nazwisko"
+          },
+          "placeholder": "Imię i Nazwisko *"
+        },
+        "phone": {
+          "placeholder": "Numer telefonu"
+        },
+        "text": {
+          "errors": {
+            "required": "Musisz napisać opinie!"
+          },
+          "placeholder": "Treść opinii..."
+        },
+        "visitDate": {
+          "placeholder": "Data wizyty *"
+        }
+      },
+      "heading": "Dodaj opinię"
     }
   }
 }

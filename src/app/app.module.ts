@@ -6,6 +6,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -75,6 +76,7 @@ export function translateLoaderFactory(http: HttpClient) {
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes, {}),
+    NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -82,7 +84,7 @@ export function translateLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    ReviewsModule,
+    ReviewsModule.forRoot(),
     CustomFormsModule
   ],
   providers: [TitleService, DataService, CacheService],

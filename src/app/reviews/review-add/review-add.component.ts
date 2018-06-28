@@ -15,7 +15,9 @@ export class ReviewAddComponent implements OnInit {
     this.addForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      visitDate: [null, [Validators.required]]
+      phone: [''],
+      visitDate: [null, [Validators.required]],
+      text: ['', [Validators.required, Validators.maxLength(2000)]]
     });
   }
 }

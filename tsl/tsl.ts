@@ -17,3 +17,14 @@ _('contact.form.message.errors.required');
 _('contact.form.message.errors.maxLength');
 _('contact.form.subject.errors.maxLength');
 _('contact.form.subject.errors.required');
+
+_('reviews.add.form.name.placeholder');
+_('reviews.add.form.email.placeholder');
+_('reviews.add.form.phone.placeholder');
+
+_('reviews.add.form.name.errors.required');
+
+_('reviews.add.form.email.errors.required');
+_('reviews.add.form.email.errors.email');
+
+_('reviews.add.form.text.errors.required');

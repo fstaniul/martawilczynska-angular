@@ -1,0 +1,6 @@
+<div *ngIf="showError" class="errors">
+  <small class="form-text text-danger" *ngFor="let error of errors">
+    <i class="fas fa-times mr-1"></i>
+    {{translateError(error) | translate}}
+  </small>
+</div>

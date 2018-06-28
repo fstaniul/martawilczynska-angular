@@ -1,0 +1,13 @@
+<div class="form-group">
+  <div class="input-group">
+    <ng-content select="[inputGroupPrepend]"></ng-content>
+    <input class="form-control" #input [disabled]="disabled" [type]="type" (input)="onChangeCb($event.target.value)" (blur)="onTouchCb()"
+      [placeholder]="placeholder | translate" [class.is-invalid]="hasError">
+    <ng-content select="[inputGroupAppend]"></ng-content>
+  </div>
+  <div class="text-danger" *ngIf="hasError">
+    <small class="form-text" *ngFor="let error of errors">
+      <i class="fas fa-fw fa-times"></i> {{error | translate}}
+    </small>
+  </div>
+</div>

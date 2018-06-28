@@ -7,5 +7,7 @@ import { Directive, Input } from '@angular/core';
 export class TranslatePrefixDirective {
   // tslint:disable-next-line:no-input-rename
   @Input('translatePrefix') prefix;
+  // tslint:disable-next-line:no-input-rename
+  @Input('translatePlaceholder') placeholder = false;
   constructor() {}
 }
