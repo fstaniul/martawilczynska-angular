@@ -1,0 +1,6 @@
+<div class="rating-container">
+  <button *ngFor="let rating of getRatingArr()" class="star-button" (mouseenter)="displayValue = rating" (mouseleave)="displayValue = value"
+    (click)="onClick(rating)" [disabled]="disabled" [@starAnimation]="animations[rating]" (@starAnimation.done)="stopAnimations(rating)">
+    <i class="fas fa-fw fa-star" [ngClass]="getRatingClasses(rating)"></i>
+  </button>
+</div>

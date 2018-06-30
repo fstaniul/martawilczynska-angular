@@ -3,6 +3,9 @@
 </div>
 <div class="px-3 pt-3 bg-white border border-top-0 border-light mb-4">
   <form [formGroup]="addForm" translatePrefix="reviews.add.form" class="form-body" translatePlaceholder="true">
+    <div class="form-group">
+      <app-rating-input formControlName="score"></app-rating-input>
+    </div>
     <app-input-with-error formControlName="name">
       <div class="input-group-prepend" inputGroupPrepend>
         <div class="input-group-text">

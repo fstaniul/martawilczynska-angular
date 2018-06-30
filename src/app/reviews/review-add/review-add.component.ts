@@ -17,7 +17,8 @@ export class ReviewAddComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phone: [''],
       visitDate: [null, [Validators.required]],
-      text: ['', [Validators.required, Validators.maxLength(2000)]]
+      text: ['', [Validators.required, Validators.maxLength(2000)]],
+      score: [0]
     });
   }
 }

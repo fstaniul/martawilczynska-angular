@@ -8,6 +8,7 @@ import { ErrorListComponent } from './error-list/error-list.component';
 import { InputWithErrorComponent } from './input-with-error/input-with-error.component';
 import { InputGroupPrependDirective } from './input-group-prepend.directive';
 import { InputGroupAppendDirective } from './input-group-append.directive';
+import { RatingInputComponent } from './rating-input/rating-input.component';
 
 @NgModule({
   imports: [CommonModule, TranslateModule.forChild()],
@@ -18,7 +19,8 @@ import { InputGroupAppendDirective } from './input-group-append.directive';
     ErrorListComponent,
     InputWithErrorComponent,
     InputGroupPrependDirective,
-    InputGroupAppendDirective
+    InputGroupAppendDirective,
+    RatingInputComponent
   ],
   exports: [
     FloatingInputComponent,
@@ -27,7 +29,8 @@ import { InputGroupAppendDirective } from './input-group-append.directive';
     InputWithErrorComponent,
     InputGroupAppendDirective,
     InputGroupPrependDirective,
-    ErrorListComponent
+    ErrorListComponent,
+    RatingInputComponent
   ]
 })
 export class CustomFormsModule {}
