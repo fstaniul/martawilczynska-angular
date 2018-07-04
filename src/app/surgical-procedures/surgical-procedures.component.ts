@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DataService } from '../../services/data.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { trigger, transition, animate, state, style } from '@angular/animations';
+import { DataService } from '../services/data.service';
 
 const navAnimation = trigger('navAnimation', [
   state('false', style({ height: '0', opacity: 0 })),

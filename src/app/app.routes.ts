@@ -1,11 +1,6 @@
 import { Routes } from '@angular/router';
 import { LanguageRouterComponent } from './components/language-router/language-router.component';
-import { SurgicalProceduresComponent } from './components/surgical-procedures/surgical-procedures.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { DriveComponent } from './components/drive/drive.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutMeComponent } from './components/about-me/about-me.component';
-import { OfficeAndStaffComponent } from './components/office-and-staff/office-and-staff.component';
 import { ReviewsModule } from './reviews/reviews.module';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewAddComponent } from './reviews/review-add/review-add.component';
@@ -23,29 +18,25 @@ export const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: HomeComponent },
-      { path: 'about-me', component: AboutMeComponent },
-      {
-        path: 'surgical-procedures/:procedure',
-        component: SurgicalProceduresComponent
-      },
+      { path: 'about-me', loadChildren: './about-me/about-me.module#AboutMeModule' },
       {
         path: 'surgical-procedures',
-        redirectTo: 'surgical-procedures/before-the-surgery'
+        loadChildren: './surgical-procedures/surgical-procedures.module#SurgicalProceduresModule'
       },
       {
         path: 'office-and-staff',
-        component: OfficeAndStaffComponent
+        loadChildren: './office-and-staff/office-and-staff.module#OfficeAndStaffModule'
       },
-      {
-        path: 'reviews',
-        component: ReviewsComponent,
-        children: [
-          { path: '', pathMatch: 'full', component: ReviewAddComponent },
-          { path: ':id', component: ReviewViewComponent }
-        ]
-      },
-      { path: 'drive', component: DriveComponent },
-      { path: 'contact', component: ContactComponent },
+      // {
+      //   path: 'reviews',
+      //   component: ReviewsComponent,
+      //   children: [
+      //     { path: '', pathMatch: 'full', component: ReviewAddComponent },
+      //     { path: ':id', component: ReviewViewComponent }
+      //   ]
+      // },
+      { path: 'drive', loadChildren: './drive/drive.module#DriveModule' },
+      { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
       { path: '**', redirectTo: 'home' }
     ]
   },

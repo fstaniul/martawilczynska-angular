@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { PhotoData } from '../galeries/photo-galery/photo-galery.component';
 import { HttpClient } from '@angular/common/http';
-import { CacheService } from '../../services/cache.service';
 import { tap } from 'rxjs/operators';
+import { PhotoData } from '../app-shared-components/components/galeries/photo-galery/photo-galery.component';
+import { CacheService } from '../services/cache.service';
 
 @Component({
   selector: 'app-office-and-staff',

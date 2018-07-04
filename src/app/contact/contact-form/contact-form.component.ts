@@ -40,7 +40,7 @@ export class ContactFormComponent implements OnInit {
     }
 
     this.httpClient
-      .post('/backend_api/sendmail.php', this.form.value)
+      .post('/api/sendmail.php', this.form.value)
       .subscribe(() => (this.status = this.SUCCESS), () => (this.status = this.ERROR));
   }
 
