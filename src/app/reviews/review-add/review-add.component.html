@@ -2,9 +2,21 @@
   <h4 class="m-0" translate="reviews.add.heading"></h4>
 </div>
 <div class="px-3 pt-3 bg-white border border-top-0 border-light mb-4">
-  <form [formGroup]="addForm" translatePrefix="reviews.add.form" class="form-body" translatePlaceholder="true">
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()" translatePrefix="reviews.add.form" class="form-body" translatePlaceholder="true">
     <div class="form-group">
-      <app-rating-input formControlName="score"></app-rating-input>
+      <app-rating-input formControlName="score">
+        <div class="input-group-prepend" inputGroupPrepend>
+          <div class="input-group-text">
+            <i class="fas fa-fw fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="input-group-append" inputGroupAppend>
+          <div class="input-group-text">
+            {{'reviews.add.form.score.label' | translate}}: {{addForm.get('score').value}}
+          </div>
+        </div>
+      </app-rating-input>
+      <app-error-list [control]="addForm.get('score')" name="score"></app-error-list>
     </div>
     <app-input-with-error formControlName="name">
       <div class="input-group-prepend" inputGroupPrepend>
@@ -35,16 +47,19 @@
           </div>
         </div>
         <input type="text" class="form-control" [placeholder]="'reviews.add.form.visitDate.placeholder' | translate" ngbDatepicker
-          #datepicker="ngbDatepicker" formControlName="visitDate">
+          #datepicker="ngbDatepicker" formControlName="visitDate" [class.is-invalid]="dateControl.invalid && (dateControl.touched || dateControl.dirty)"
+          [maxDate]="maxDate">
         <div class="input-group-append">
           <button class="btn btn-outline-dark" (click)="datepicker.toggle()">
             <i class="fas fa-fw fa-calendar-plus"></i>
           </button>
         </div>
       </div>
+      <app-error-list [control]="dateControl" name="visitDate"></app-error-list>
     </div>
     <div class="form-group">
-      <textarea rows="6" class="form-control" [placeholder]="'reviews.add.form.text.placeholder' | translate" formControlName="text"></textarea>
+      <textarea rows="6" class="form-control" [placeholder]="'reviews.add.form.text.placeholder' | translate" formControlName="text"
+        [class.is-invalid]="textControl.invalid && (textControl.touched || textControl.dirty)"></textarea>
       <app-error-list [control]="addForm.get('text')" name="text"></app-error-list>
     </div>
     <div class="container-fluid">

@@ -134,6 +134,10 @@
 				"phone": {
 					"placeholder": ""
 				},
+				"score": {
+					"label": ""
+				},
+				"submit": "",
 				"text": {
 					"errors": {
 						"required": ""

@@ -139,6 +139,10 @@
         "phone": {
           "placeholder": "Numer telefonu"
         },
+        "score": {
+          "label": "Ocena"
+        },
+        "submit": "Dodaj opinie!",
         "text": {
           "errors": {
             "required": "Musisz napisać opinie!"

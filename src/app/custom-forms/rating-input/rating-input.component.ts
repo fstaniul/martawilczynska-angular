@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, Self } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl } from '@angular/forms';
 import { transition, trigger, state, style, animate, query, keyframes } from '@angular/animations';
 
 const starAnimation = trigger('starAnimation', [
@@ -33,7 +33,6 @@ interface Rating {
   selector: 'app-rating-input',
   templateUrl: './rating-input.component.html',
   styleUrls: ['./rating-input.component.scss'],
-  providers: [{ provide: NG_VALUE_ACCESSOR, useExisting: RatingInputComponent, multi: true }],
   animations: [starAnimation]
 })
 export class RatingInputComponent implements ControlValueAccessor, OnChanges {
@@ -48,7 +47,9 @@ export class RatingInputComponent implements ControlValueAccessor, OnChanges {
 
   animations: number[] = [];
 
-  constructor() {}
+  constructor(@Self() private ngControl: NgControl) {
+    ngControl.valueAccessor = this;
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.maxRating) {
@@ -113,5 +114,9 @@ export class RatingInputComponent implements ControlValueAccessor, OnChanges {
     for (let i = 1; i <= rating; i++) {
       this.animations[i] = 0;
     }
+  }
+
+  get isInvalid() {
+    return this.ngControl.control.invalid && (this.ngControl.touched || this.ngControl.dirty);
   }
 }

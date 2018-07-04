@@ -1,6 +1,10 @@
-<div class="rating-container">
-  <button *ngFor="let rating of getRatingArr()" class="star-button" (mouseenter)="displayValue = rating" (mouseleave)="displayValue = value"
-    (click)="onClick(rating)" [disabled]="disabled" [@starAnimation]="animations[rating]" (@starAnimation.done)="stopAnimations(rating)">
-    <i class="fas fa-fw fa-star" [ngClass]="getRatingClasses(rating)"></i>
-  </button>
+<div class="input-group">
+  <ng-content select="[inputGroupPrepend]"></ng-content>
+  <div class="rating-container form-control" [class.is-invalid]="isInvalid">
+    <button type="button" *ngFor="let rating of getRatingArr()" class="star-button" (mouseenter)="displayValue = rating" (mouseleave)="displayValue = value"
+      (click)="onClick(rating)" [disabled]="disabled" [@starAnimation]="animations[rating]" (@starAnimation.done)="stopAnimations(rating)">
+      <i class="fas fa-fw fa-star" [ngClass]="getRatingClasses(rating)"></i>
+    </button>
+  </div>
+  <ng-content select="[inputGroupAppend]"></ng-content>
 </div>
