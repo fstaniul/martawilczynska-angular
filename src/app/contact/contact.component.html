@@ -1,12 +1,12 @@
 <div class="page-container--1200">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-12 col-sm-6 col-md-4 col-lg-offset-1 col-lg-3">
-        <p class="text-center text-secondary message" [innerHTML]="'contact.message.clinic' | translate"></p>
-        <p class="text-center text-secondary mb-4 message" [innerHTML]="'contact.message.marta' | translate"></p>
-        <div class="contact-info-display">
-          <app-contact-into></app-contact-into>
-        </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-offset-1 col-lg-3 mb-4">
+        <p class="text-center text-secondary mb-2 message" [innerHTML]="'contact.message.clinic' | translate"></p>
+        <app-contact-info-clinic class="d-block" textClass="text-primary" [label]="false"></app-contact-info-clinic>
+        <hr>
+        <p class="text-center text-secondary mb-2 message" [innerHTML]="'contact.message.marta' | translate"></p>
+        <app-contact-info-marta class="d-block" textClass="text-primary" [label]="false"></app-contact-info-marta>
       </div>
       <div class="d-block d-md-none py-3 w-100"></div>
       <div class="col-12 col-md-8 col-lg-8">

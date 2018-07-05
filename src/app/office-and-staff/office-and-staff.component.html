@@ -5,7 +5,10 @@
         <div class="d-flex flex-column flex-sm-row flex-md-column">
           <app-photo-galery class="d-block mb-3 order-photo" [photos]="photos"></app-photo-galery>
           <div class="px-3 order-info">
-            <app-contact-into class="d-flex flex-column align-items-center"></app-contact-into>
+            <div class="d-flex flex-column align-items-end">
+              <app-contact-info-clinic class="d-block mb-3" textClass="text-primary"></app-contact-info-clinic>
+              <app-contact-info-marta class="d-block"></app-contact-info-marta>
+            </div>
             <app-drive-info class="d-block mt-4"></app-drive-info>
             <div class="text-center mt-3">
               <a [routerLink]="localizeLink('drive')" class="btn btn-outline-primary btn-rounded">
