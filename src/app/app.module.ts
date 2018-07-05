@@ -38,7 +38,7 @@ export function translateLoaderFactory(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
     NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
