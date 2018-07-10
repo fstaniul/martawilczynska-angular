@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,12 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HomeComponent {
   constructor(private translateService: TranslateService) {}
-
-  get proceduresLink() {
-    return `/${this.translateService.currentLang}/surgical-procedures`;
-  }
-
-  get contactLink() {
-    return `/${this.translateService.currentLang}/contact`;
+  get language() {
+    return this.translateService.currentLang;
   }
 }

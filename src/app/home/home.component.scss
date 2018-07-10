@@ -1,0 +1,38 @@
+@import 'src/styles/import';
+
+.container-home {
+  @include media-breakpoint-up(md) {
+    margin-top: 2rem;
+  }
+}
+
+.heading {
+  font-size: calc(40px + ((64 - 40) * ((100vw - 567px) / (1200 - 567))));
+  margin-bottom: 0;
+}
+
+.subheading {
+  font-size: calc(16px + ((28 - 16) * ((100vw - 567px) / (1200 - 567))));
+}
+
+.button-text {
+  font-size: 1.2rem;
+}
+
+.button-small {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.marta-image {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.review-margin-top {
+  margin-top: 1rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 3rem;
+  }
+}

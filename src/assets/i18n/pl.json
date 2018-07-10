@@ -87,8 +87,22 @@
   },
   "home": {
     "buttons": {
-      "contact": "Skontaktuj się ze Mną",
-      "surgical-procedures": "Zobacz zabiegi operacyjne"
+      "contact": {
+        "small": "Skontaktuj się aby umówić wizytę lub zadać pytanie odnośnie zabiegu.",
+        "text": "Skontaktuj się ze mną"
+      },
+      "surgical": {
+        "small": "Przeglądaj informacje o wykonywanych przeze mnie zabiegach operacyjnych.",
+        "text": "Zabiegi Operacyjne"
+      },
+      "znanylekarz": {
+        "small": "Opinie wystawione przez pacjentów na portalu znanylekarz.pl",
+        "text": "Opinie w znanylekarz.pl"
+      }
+    },
+    "subheading": {
+      "aestetic": "Specjalista Chirurgii Plastycznej",
+      "general": "Specjalista Chirurgii Ogólnej"
     }
   },
   "logo": {

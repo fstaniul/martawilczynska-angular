@@ -84,8 +84,22 @@
 	},
 	"home": {
 		"buttons": {
-			"contact": "Contact with me",
-			"surgical-procedures": "Information on surgical procedures"
+			"contact": {
+				"small": "",
+				"text": ""
+			},
+			"surgical": {
+				"small": "",
+				"text": ""
+			},
+			"znanylekarz": {
+				"small": "",
+				"text": ""
+			}
+		},
+		"subheading": {
+			"aestetic": "",
+			"general": ""
 		}
 	},
 	"logo": {

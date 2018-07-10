@@ -11,7 +11,6 @@ import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LanguageRouterComponent } from './components/language-router/language-router.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { HomeComponent } from './components/home/home.component';
 import { TitleService } from './services/title.service';
 import { DataService } from './services/data.service';
 import { CacheService } from './services/cache.service';
@@ -30,7 +29,6 @@ export function translateLoaderFactory(http: HttpClient) {
     AppComponent,
     LanguageRouterComponent,
     NavigationComponent,
-    HomeComponent,
     LanguageSwitcherComponent,
     InitialRedirectComponent
   ],

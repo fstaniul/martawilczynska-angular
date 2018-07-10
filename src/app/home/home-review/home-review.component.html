@@ -1,0 +1,12 @@
+<div class="page-container--1200">
+  <div class="d-flex justify-content-center">
+    <a href="https://www.znanylekarz.pl/marta-wilczynska-staniul/chirurg-plastyczny-chirurg/wroclaw" target="_blank" class="znanylekarz-button"
+      (mouseenter)="spreadLogo = true" (mouseleave)="spreadLogo = false">
+      <span class="d-block znanylekarz-button-text" translate="home.buttons.znanylekarz.text"></span>
+      <small class="d-block znanylekarz-button-small text-center" translate="home.buttons.znanylekarz.small"></small>
+      <div class="znanylekarz-logo-container d-none d-sm-flex" [@animateLogoBackground]="spreadLogo">
+        <img src="/assets/img/znanylekarz-logo.png" alt="Znany Lekarz" class="znanylekarz-logo">
+      </div>
+    </a>
+  </div>
+</div>
