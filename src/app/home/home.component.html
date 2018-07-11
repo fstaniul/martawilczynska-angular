@@ -1,36 +1,34 @@
-<div class="page-container--1200 container-home">
-  <div class="container-fluid">
+<div class="page-container--1200">
+  <div class="container-fluid mb-5">
     <div class="row align-items-center">
-      <div class="col-12 col-md-7 col-lg-8 order-2 order-md-1 text-right">
-        <h1 class="heading niconne">Marta Wilczyńska</h1>
-        <div translate="home.subheading.aestetic" class="subheading text-muted"></div>
-        <div translate="home.subheading.general" class="subheading text-muted"></div>
+      <div class="col order-2 col-md-8 order-md-1">
+        <div class="heading-container">
+          <div class="text-right">
+            <div class="heading niconne">Marta Wilczyńska</div>
+            <div class="subheading" translate="home.subheading.aestetic"></div>
+            <div class="subheading" translate="home.subheading.general"></div>
+          </div>
+        </div>
         <hr>
         <div class="form-row">
           <div class="col-12 col-sm-6 col-md-12 col-lg-6 mb-2 order-2 order-sm-1 order-md-2 order-lg-1">
-            <a [routerLink]="['/', language, 'surgical-procedures']" class="btn btn-block btn-light d-inline-flex justify-content-center align-items-center">
-              <i class="fas fa-heartbeat fa-fw mr-1 fa-2x"></i>
-              <span class="d-block">
-                <span class="button-text">{{'home.buttons.surgical.text' | translate}}</span>
-                <small class="d-block text-wrap button-small" translate="home.buttons.surgical.small"></small>
-              </span>
-            </a>
+            <button class="btn btn-outline-info btn-block btn-rounded h-100">
+              <span class="d-block btn-text" translate="home.buttons.surgical-procedures.text"></span>
+              <small class="d-block btn-subtext" [innerHTML]="'home.buttons.surgical-procedures.subtext' | translate"></small>
+            </button>
           </div>
           <div class="col-12 col-sm-6 col-md-12 col-lg-6 mb-2 order-1 order-sm-2 order-md-1 order-lg-2">
-            <a [routerLink]="['/', language , 'contact']" class="btn btn-block btn-info d-inline-flex justify-content-center align-items-center">
-              <i class="fas fa-envelope fa-fw mr-1 fa-2x"></i>
-              <span class="d-block">
-                <span class="button-text">{{'home.buttons.contact.text' | translate}}</span>
-                <small class="d-block text-wrap button-small" translate="home.buttons.contact.small"></small>
-              </span>
-            </a>
+            <button class="btn btn-info btn-block btn-rounded h-100">
+              <span class="d-block btn-text" translate="home.buttons.contact.text"></span>
+              <small class="d-block btn-subtext" [innerHTML]="'home.buttons.contact.subtext' | translate"></small>
+            </button>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-5 col-lg-4 order-1 order-md-2 d-flex justify-content-center align-items-center">
-        <img src="/assets/img/marta-home.png" alt="Marta Wilczyńska" class="marta-image">
+      <div class="d-flex justify-content-center align-items-center col-12 order-1 col-md-4 order-md-2">
+        <img src="/assets/img/marta.png" alt="Marta Wilczyńska" class="marta-image">
       </div>
     </div>
   </div>
+  <app-home-review></app-home-review>
 </div>
-<app-home-review class="d-block review-margin-top"></app-home-review>

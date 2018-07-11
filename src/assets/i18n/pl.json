@@ -88,12 +88,12 @@
   "home": {
     "buttons": {
       "contact": {
-        "small": "Skontaktuj się aby umówić wizytę lub zadać pytanie odnośnie zabiegu.",
+        "subtext": "Skontaktuj się aby umówić wizytę lub zadać pytanie.",
         "text": "Skontaktuj się ze mną"
       },
-      "surgical": {
-        "small": "Przeglądaj informacje o wykonywanych przeze mnie zabiegach operacyjnych.",
-        "text": "Zabiegi Operacyjne"
+      "surgical-procedures": {
+        "subtext": "Przeglądaj informacje o wykonywanych<br />przeze mnie zabiegach operacyjnych.",
+        "text": "Zabiegi operacyjne"
       },
       "znanylekarz": {
         "small": "Opinie wystawione przez pacjentów na portalu znanylekarz.pl",

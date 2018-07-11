@@ -1,38 +1,44 @@
 @import 'src/styles/import';
 
-.container-home {
+.marta-image {
+  width: 200px;
+
   @include media-breakpoint-up(md) {
-    margin-top: 2rem;
+    width: 300px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 350px;
+  }
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @include media-breakpoint-up(md) {
+    justify-content: flex-end;
   }
 }
 
 .heading {
-  font-size: calc(40px + ((64 - 40) * ((100vw - 567px) / (1200 - 567))));
-  margin-bottom: 0;
+  @include fluid-typography(32px, 64px);
+  color: $primary;
 }
 
 .subheading {
-  font-size: calc(16px + ((28 - 16) * ((100vw - 567px) / (1200 - 567))));
+  @include fluid-typography(14px, 32px);
+  color: $dark;
 }
 
-.button-text {
-  font-size: 1.2rem;
+.btn-text {
+  line-height: 1.5rem;
+  white-space: normal;
 }
 
-.button-small {
+.btn-subtext {
   font-size: 12px;
-  line-height: 12px;
-}
-
-.marta-image {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-}
-
-.review-margin-top {
-  margin-top: 1rem;
-  @include media-breakpoint-up(md) {
-    margin-top: 3rem;
-  }
+  line-height: 14px;
+  white-space: normal;
 }
