@@ -15,7 +15,8 @@ import { CustomFormsModule } from '../custom-forms/custom-forms.module';
 
 @NgModule({
   imports: [CommonModule, RouterModule, ReactiveFormsModule, TranslateModule.forChild(), CustomFormsModule, NgbModule],
-  declarations: [ReviewComponent, ReviewsComponent, ReviewAddComponent, ReviewViewComponent, ReviewsDisplayComponent]
+  declarations: [ReviewComponent, ReviewsComponent, ReviewAddComponent, ReviewViewComponent, ReviewsDisplayComponent],
+  exports: [ReviewComponent, ReviewsComponent, ReviewAddComponent, ReviewViewComponent, ReviewsDisplayComponent]
 })
 export class ReviewsModule {
   static forRoot(): ModuleWithProviders {

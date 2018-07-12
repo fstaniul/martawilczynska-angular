@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { Review } from '../services/review.service';
 
 @Component({
@@ -6,37 +6,34 @@ import { Review } from '../services/review.service';
   templateUrl: './reviews-display.component.html',
   styleUrls: ['./reviews-display.component.scss']
 })
-export class ReviewsDisplayComponent implements OnInit, OnChanges {
-  @Input() orientation: 'horizontal' | 'vertical' = 'horizontal';
-  @Input() elementsCount = 3;
-  @Input() reviews: Review[] = [];
+export class ReviewsDisplayComponent {
+  @ViewChild('carouselContainer') carouselContainer: ElementRef;
+  @ViewChild('carousel') carousel: ElementRef;
 
-  viewElements: Review[] = [];
-  currentViewElement = 0;
+  private _transform = 0;
+  currentItem = 0;
+  items: any[] = [1, 2];
 
   constructor() {}
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes.orientation) {
-      const v = changes.orientation.currentValue;
-      if (v !== 'horizontal' && v !== 'vertical') {
-        this.orientation = 'horizontal';
-      }
-    }
-
-    if (changes.elementsCount) {
-      const v = changes.elementsCount.currentValue;
-      if (typeof v === 'string') this.elementsCount = Number.parseInt(v);
-      if (typeof v !== 'number') this.elementsCount = 3;
-    }
+  moveLeft() {
+    if (this.currentItem <= 0) return;
+    this.currentItem--;
+    this.calculateTranslation();
   }
 
-  ngOnInit() {}
+  moveRight() {
+    if (this.currentItem >= this.items.length - 1) return;
+    this.currentItem++;
+    this.calculateTranslation();
+  }
 
-  get containerClasses() {
-    return {
-      'flex-row': this.orientation === 'horizontal',
-      'flex-column': this.orientation === 'vertical'
-    };
+  calculateTranslation() {
+    const carouselWidth = this.carouselContainer.nativeElement.offsetWidth;
+    this._transform = carouselWidth * this.currentItem;
+  }
+
+  get transform(): any {
+    return `translateX(-${this._transform}px)`;
   }
 }
