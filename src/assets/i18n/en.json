@@ -1,172 +1,181 @@
 {
-	"about-me": {
-		"certificates": {
-			"heading": "Certificates",
-			"subheading": "Certificates I own."
-		},
-		"text": {
-			"info": "<p>I graduated from the Pomorski Uniwersytet Medyczny w Szczecinie (Pomeranian Medical University in Szczecin) in 1994. Between 1994 and 2005 I worked in the Zachodniopomorskie Centrum Leczenia Ciężkich Oparzeń i Chirurgii Plastycznej (Pomeranian Centre for Treatment of Severe Burns and Plastic Surgery) in Gryfice, where I obtained both first and second degree specialization in general surgery and have been awarded the title of a Specialist in the General Surgery.</p><p>From 2005 till 2012 I worked in a leading-edge plastic surgery centre in Poland, namely in the Klinika Chirurgii Plastycznej (Plastic Surgery Clinic) in Polanica Zdrój. Here I educated myself under the supervision of dr Kazimierz Kobus and dr Ireneusz Łątkowski. In 2010 I have been awarded the title of a Plastic Surgery Specialist under the tutelage of dr Ireneusz Łątkowski.</p><p>Since 1999 I have been constantly dealing with plastic surgery. I have gained my experience both in Poland and abroad and I am still educating myself.</p><p>I am a member of Polskie Towarzystwo Chirurgii Plastycznej, Rekonstrukcyjnej i Estetycznej (Polish Association of Plastic, Reconstructive and Aesthetic Surgery), Towarzystwo Chirurgów Polskich (Polish Surgeons Association) and Polskie Towarzystwo Leczenia Oparzeń (Polish Burns Treatment Association).</p>",
-			"invitation": "Please feel invited to seek medical advice and consultation.",
-			"quote": "Give every day the chance to become the most beautiful day of your life."
-		},
-		"video": {
-			"subheading": "I invite you to the movie."
-		}
-	},
-	"contact": {
-		"error": {
-			"buttons": {
-				"edit-form": "Make changes",
-				"try-again": "Try to send again"
-			},
-			"heading": "Oh no! Error",
-			"message": "Error occurred while sending a message. You can try again or make changes in the message. Please check if your internet connection is up and running."
-		},
-		"form": {
-			"buttons": {
-				"clear": "Clear form",
-				"submit": "Send e-mail"
-			},
-			"email": {
-				"errors": {
-					"email": "This is not a correct e-mail address!",
-					"required": "Write Your e-mail address so You can get a response."
-				},
-				"label": "E-Mail address"
-			},
-			"heading": "Contact Me via E-Mail",
-			"message": {
-				"errors": {
-					"maxLength": "Your message is too long. Maximum number of characters you can write here is 2000.",
-					"required": "Write Your message."
-				},
-				"label": "Message",
-				"placeholder": "Write Your message here..."
-			},
-			"name": {
-				"errors": {
-					"required": "Write Your full name."
-				},
-				"label": "Full Name"
-			},
-			"phone": {
-				"errors": {
-					"pattern": "Please write your phone number as +48 123 123 123",
-					"required": "Your phone number is required."
-				},
-				"label": "Phone number"
-			},
-			"subject": {
-				"errors": {
-					"maxLength": "Subject can contain maximum of 300 characters.",
-					"required": "Subject is required."
-				},
-				"label": "Subject",
-				"placeholder": "Subject"
-			}
-		},
-		"message": {
-			"clinic": "To arrange an appointment, please contact <strong class=\"text-primary\">NOA&nbsp;Clinic</ strong>.",
-			"marta": "For any other purpose, please contact <strong class=\"text-primary\">Dr.&nbsp;Marta&nbsp;Wilczyńska</strong> directly."
-		},
-		"success": {
-			"buttons": {
-				"write-another": "Write another message."
-			},
-			"heading": "Message sent",
-			"message": "Message was sent successfully. Please be patient waiting for your replay. Dr Marta Wilczyńska allways replies to messages. If you would like to write another message, click the button below."
-		}
-	},
-	"drive": {
-		"buttons": {
-			"show-directions": "Show directions"
-		}
-	},
-	"home": {
-		"buttons": {
-			"contact": {
-				"subtext": "",
-				"text": ""
-			},
-			"surgical-procedures": {
-				"subtext": "",
-				"text": ""
-			},
-			"znanylekarz": {
-				"small": "",
-				"text": ""
-			}
-		},
-		"reviews": {
-			"heading": "",
-			"subheading": ""
-		},
-		"subheading": {
-			"aestetic": "",
-			"general": ""
-		}
-	},
-	"logo": {
-		"subheading": "Specialist in Aestetic & General Surgery"
-	},
-	"navigation": {
-		"about-me": "About Me",
-		"contact": "Contact",
-		"drive": "Drive",
-		"home": "Home",
-		"office-and-staff": "Office & Staff",
-		"reviews": "Reviews",
-		"surgical-procedures": "Surgical Procedures"
-	},
-	"office-and-staff": {
-		"buttons": {
-			"see-directions": "See directions"
-		},
-		"content": "<p><strong>The clinic complies with the highest european quality standards. The clinic consists of:</strong></p><ul><li>preparatory room</li><li>operating room</li><li>post-operating room</li><li>dressing room</li><li>waiting room</li><li>utility room</li></ul><p>Operating suite is equipped with modern high-tech surgical, anesthesiological and monitoring equipment. Surgical procedures are performed with the use of equipment such as advanced liposuction equipment, laser equipment for biological regeneration and rejuvenation, laser equipment for nonoperative wrinkle-removal and the like.</p><p>The clinic hires only highly skilled medical staff: anesthetist with second grade specialization, anesthesiological nurses and circulating nurses with several dozen years of experience. During the post-operative period all our patients remain under professional nursing care.</p>"
-	},
-	"page": {
-		"loader": {
-			"error": {
-				"message": "Error occurred while loading this page content. Please check Your internet connection and try again! We are sorry for any inconvenience it may have caused.",
-				"reload-button": "Try to load again!",
-				"title": "Ohh no! Error..."
-			}
-		}
-	},
-	"reviews": {
-		"add": {
-			"form": {
-				"email": {
-					"errors": {
-						"email": "",
-						"required": ""
-					},
-					"placeholder": ""
-				},
-				"name": {
-					"errors": {
-						"required": ""
-					},
-					"placeholder": ""
-				},
-				"phone": {
-					"placeholder": ""
-				},
-				"score": {
-					"label": ""
-				},
-				"submit": "",
-				"text": {
-					"errors": {
-						"required": ""
-					},
-					"placeholder": ""
-				},
-				"visitDate": {
-					"placeholder": ""
-				}
-			},
-			"heading": ""
-		}
-	}
+  "about-me": {
+    "certificates": {
+      "heading": "Certificates",
+      "subheading": "Certificates I own."
+    },
+    "text": {
+      "info":
+        "<p>I graduated from the Pomorski Uniwersytet Medyczny w Szczecinie (Pomeranian Medical University in Szczecin) in 1994. Between 1994 and 2005 I worked in the Zachodniopomorskie Centrum Leczenia Ciężkich Oparzeń i Chirurgii Plastycznej (Pomeranian Centre for Treatment of Severe Burns and Plastic Surgery) in Gryfice, where I obtained both first and second degree specialization in general surgery and have been awarded the title of a Specialist in the General Surgery.</p><p>From 2005 till 2012 I worked in a leading-edge plastic surgery centre in Poland, namely in the Klinika Chirurgii Plastycznej (Plastic Surgery Clinic) in Polanica Zdrój. Here I educated myself under the supervision of dr Kazimierz Kobus and dr Ireneusz Łątkowski. In 2010 I have been awarded the title of a Plastic Surgery Specialist under the tutelage of dr Ireneusz Łątkowski.</p><p>Since 1999 I have been constantly dealing with plastic surgery. I have gained my experience both in Poland and abroad and I am still educating myself.</p><p>I am a member of Polskie Towarzystwo Chirurgii Plastycznej, Rekonstrukcyjnej i Estetycznej (Polish Association of Plastic, Reconstructive and Aesthetic Surgery), Towarzystwo Chirurgów Polskich (Polish Surgeons Association) and Polskie Towarzystwo Leczenia Oparzeń (Polish Burns Treatment Association).</p>",
+      "invitation": "Please feel invited to seek medical advice and consultation.",
+      "quote": "Give every day the chance to become the most beautiful day of your life."
+    },
+    "video": {
+      "subheading": "I invite you to the movie."
+    }
+  },
+  "contact": {
+    "error": {
+      "buttons": {
+        "edit-form": "Make changes",
+        "try-again": "Try to send again"
+      },
+      "heading": "Oh no! Error",
+      "message":
+        "Error occurred while sending a message. You can try again or make changes in the message. Please check if your internet connection is up and running."
+    },
+    "form": {
+      "buttons": {
+        "clear": "Clear form",
+        "submit": "Send e-mail"
+      },
+      "email": {
+        "errors": {
+          "email": "This is not a correct e-mail address!",
+          "required": "Write Your e-mail address so You can get a response."
+        },
+        "label": "E-Mail address"
+      },
+      "heading": "Contact Me via E-Mail",
+      "message": {
+        "errors": {
+          "maxLength": "Your message is too long. Maximum number of characters you can write here is 2000.",
+          "required": "Write Your message."
+        },
+        "label": "Message",
+        "placeholder": "Write Your message here..."
+      },
+      "name": {
+        "errors": {
+          "required": "Write Your full name."
+        },
+        "label": "Full Name"
+      },
+      "phone": {
+        "errors": {
+          "pattern": "Please write your phone number as +48 123 123 123",
+          "required": "Your phone number is required."
+        },
+        "label": "Phone number"
+      },
+      "subject": {
+        "errors": {
+          "maxLength": "Subject can contain maximum of 300 characters.",
+          "required": "Subject is required."
+        },
+        "label": "Subject",
+        "placeholder": "Subject"
+      }
+    },
+    "message": {
+      "clinic": "To arrange an appointment, please contact <strong class=\"text-primary\">NOA&nbsp;Clinic</ strong>.",
+      "marta":
+        "For any other purpose, please contact <strong class=\"text-primary\">Dr.&nbsp;Marta&nbsp;Wilczyńska</strong> directly."
+    },
+    "success": {
+      "buttons": {
+        "write-another": "Write another message."
+      },
+      "heading": "Message sent",
+      "message":
+        "Message was sent successfully. Please be patient waiting for your replay. Dr Marta Wilczyńska allways replies to messages. If you would like to write another message, click the button below."
+    }
+  },
+  "drive": {
+    "buttons": {
+      "show-directions": "Show directions"
+    }
+  },
+  "home": {
+    "buttons": {
+      "contact": {
+        "subtext": "Contact with me to arrange consultation<br />or to ask quesiton.",
+        "text": "Contact with me"
+      },
+      "surgical-procedures": {
+        "subtext": "Preview information about surgical procedures<br />performed by me.",
+        "text": "Surgical procedures"
+      },
+      "znanylekarz": {
+        "small": "Testimonials written by my patients on docplanner portal (znanylekarz.pl)",
+        "text": "Testimonials on docplanner"
+      }
+    },
+    "reviews": {
+      "heading": "Patients' testimonials",
+      "subheading": "Testimonials written by my patients after surgical procedures or consultation."
+    },
+    "subheading": {
+      "aestetic": "Specialist in Aestetic Plastic Surgery",
+      "general": "Specialist in General Surgery"
+    }
+  },
+  "logo": {
+    "subheading": "Specialist in Aestetic Plastic & General Surgery"
+  },
+  "navigation": {
+    "about-me": "About Me",
+    "contact": "Contact",
+    "drive": "Drive",
+    "home": "Home",
+    "office-and-staff": "Office & Staff",
+    "reviews": "Reviews",
+    "surgical-procedures": "Surgical Procedures"
+  },
+  "office-and-staff": {
+    "buttons": {
+      "see-directions": "See directions"
+    },
+    "content":
+      "<p><strong>The clinic complies with the highest european quality standards. The clinic consists of:</strong></p><ul><li>preparatory room</li><li>operating room</li><li>post-operating room</li><li>dressing room</li><li>waiting room</li><li>utility room</li></ul><p>Operating suite is equipped with modern high-tech surgical, anesthesiological and monitoring equipment. Surgical procedures are performed with the use of equipment such as advanced liposuction equipment, laser equipment for biological regeneration and rejuvenation, laser equipment for nonoperative wrinkle-removal and the like.</p><p>The clinic hires only highly skilled medical staff: anesthetist with second grade specialization, anesthesiological nurses and circulating nurses with several dozen years of experience. During the post-operative period all our patients remain under professional nursing care.</p>"
+  },
+  "page": {
+    "loader": {
+      "error": {
+        "message":
+          "Error occurred while loading this page content. Please check Your internet connection and try again! We are sorry for any inconvenience it may have caused.",
+        "reload-button": "Try to load again!",
+        "title": "Ohh no! Error..."
+      }
+    }
+  },
+  "reviews": {
+    "add": {
+      "form": {
+        "email": {
+          "errors": {
+            "email": "",
+            "required": ""
+          },
+          "placeholder": ""
+        },
+        "name": {
+          "errors": {
+            "required": ""
+          },
+          "placeholder": ""
+        },
+        "phone": {
+          "placeholder": ""
+        },
+        "score": {
+          "label": ""
+        },
+        "submit": "",
+        "text": {
+          "errors": {
+            "required": ""
+          },
+          "placeholder": ""
+        },
+        "visitDate": {
+          "placeholder": ""
+        }
+      },
+      "heading": ""
+    },
+    "display": {
+      "see-more": "See more"
+    }
+  }
 }

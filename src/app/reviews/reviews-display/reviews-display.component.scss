@@ -67,3 +67,13 @@ $disabledColor: #c7c7c7;
     // transform: translateY(-2px);
   }
 }
+
+.see-more-button {
+  border: 1px solid $white;
+  color: $white;
+
+  &:hover {
+    color: $black;
+    background: $white;
+  }
+}
