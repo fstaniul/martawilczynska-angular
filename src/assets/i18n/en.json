@@ -97,6 +97,10 @@
 				"text": ""
 			}
 		},
+		"reviews": {
+			"heading": "",
+			"subheading": ""
+		},
 		"subheading": {
 			"aestetic": "",
 			"general": ""

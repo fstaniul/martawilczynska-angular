@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center pt-4 pb-3">
+<div class="d-flex justify-content-center pt-4 pb-2" (mouseenter)="stopInterval()" (mouseleave)="startInterval()">
   <div class="d-flex align-items-center justify-content-center arrow-container pl-2" (click)="moveLeft()">
     <i class="fas fa-arrow-left fa-2x arrow" [class.disabled]="currentItem === 0"></i>
   </div>
@@ -33,8 +33,11 @@
     <i class="fas fa-arrow-right fa-2x arrow" [class.disabled]="currentItem === items.length - 1"></i>
   </div>
 </div>
-<div class="d-flex justify-content-center pb-4">
-  <div class="py-2 select-box-container" *ngFor="let item of items; let i = index" (click)="currentItem = i; calculateTranslation()">
-    <div class="select-box m-1" [class.active]="currentItem === i"></div>
+<div class="d-flex justify-content-center pb-3">
+  <div class="py-1 px-1 select-box-container" *ngFor="let item of items; let i = index" (click)="currentItem = i; calculateTranslation()">
+    <div class="select-box" [class.active]="currentItem === i"></div>
   </div>
+</div>
+<div class="pb-3 text-center">
+  <a [routerLink]="['/', lang, 'reviews']" class="btn btn-outline-light btn-rounded" translate="reviews.display.see-more"></a>
 </div>
