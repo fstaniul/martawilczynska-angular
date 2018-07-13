@@ -5,10 +5,10 @@ import { HomeRoutingModule } from './home.routing';
 import { HomeComponent } from './home.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomeReviewComponent } from './home-review/home-review.component';
-import { ReviewsModule } from '../reviews/reviews.module';
+import { ReviewsDisplayComponent } from './reviews-display/reviews-display.component';
 
 @NgModule({
-  imports: [CommonModule, HomeRoutingModule, TranslateModule.forChild(), ReviewsModule.forChild()],
-  declarations: [HomeComponent, HomeReviewComponent]
+  imports: [CommonModule, HomeRoutingModule, TranslateModule.forChild()],
+  declarations: [HomeComponent, HomeReviewComponent, ReviewsDisplayComponent]
 })
 export class HomeModule {}

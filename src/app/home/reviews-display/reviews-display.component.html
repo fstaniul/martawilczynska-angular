@@ -7,23 +7,15 @@
       <!-- CAROUSEL ITEMS -->
       <div class="review-carousel-item" *ngFor="let item of items">
         <div class="review-stars mb-2">
-          <i class="fas fa-star mr-1 fa-lg text-info"></i>
-          <i class="fas fa-star mr-1 fa-lg text-info"></i>
-          <i class="fas fa-star mr-1 fa-lg text-info"></i>
-          <i class="fas fa-star mr-1 fa-lg text-info"></i>
-          <i class="fas fa-star mr-1 fa-lg text-info"></i>
+          <i class="fas fa-star mr-1 fa-lg text-info" *ngFor="let star of getStars(item)"></i>
         </div>
-        <p class="review-text">
-          Deserunt veniam fugiat elit incididunt amet laborum ex ipsum anim ut elit et duis commodo. Quis deserunt excepteur occaecat
-          aute nulla tempor. Magna nisi duis dolore proident cupidatat magna consequat. Esse minim culpa amet elit aliquip
-          commodo culpa irure. Minim eiusmod ut fugiat voluptate nostrud est ut ad anim incididunt magna. Proident incididunt
-          esse ex quis minim aliqua reprehenderit occaecat.
+        <p class="review-text" [innerHTML]="item.review">
         </p>
         <div class="d-flex flex-row justify-content-between">
           <div class="text-dark">
-            <small>Zabieg: usunięcie znamion</small>
+            <small *ngIf="item.procedure">{{'home.reviews.procedure' | translate}}: {{item.procedure}}</small>
           </div>
-          <div>~ klaudia-wasiak</div>
+          <div>~ {{item.signature}}</div>
         </div>
       </div>
       <!-- END OF CAROUSEL ITEMS -->

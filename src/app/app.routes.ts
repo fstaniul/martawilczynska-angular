@@ -13,7 +13,7 @@ export const routes: Routes = [
     component: LanguageRouterComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', loadChildren: () => HomeModule },
+      { path: 'home', loadChildren: './home/home.module#HomeModule' },
       { path: 'about-me', loadChildren: './about-me/about-me.module#AboutMeModule' },
       {
         path: 'surgical-procedures',
@@ -23,14 +23,6 @@ export const routes: Routes = [
         path: 'office-and-staff',
         loadChildren: './office-and-staff/office-and-staff.module#OfficeAndStaffModule'
       },
-      // {
-      //   path: 'reviews',
-      //   component: ReviewsComponent,
-      //   children: [
-      //     { path: '', pathMatch: 'full', component: ReviewAddComponent },
-      //     { path: ':id', component: ReviewViewComponent }
-      //   ]
-      // },
       { path: 'drive', loadChildren: './drive/drive.module#DriveModule' },
       { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
       { path: '**', redirectTo: 'home' }
