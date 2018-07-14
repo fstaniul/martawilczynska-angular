@@ -4,50 +4,56 @@
     <header>
       <h4 class="text-center py-3 mb-0" translate="contact.form.heading"></h4>
     </header>
-    <main class="px-2 pt-2">
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+    <main class="px-3 pt-3">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate translatePrefix="contact.form">
 
         <div class="form-group">
-          <div class="floating-label">
-            <input name="fullname" type="text" id="name-input" class="floating-input" placeholder="Will Smith" appNotEmpty formControlName="name">
-            <label for="name-input" translate="contact.form.name.label"></label>
-          </div>
-          <app-input-error-messages [control]="name" name="name" prefix="contact.form"></app-input-error-messages>
+          <app-input-with-error formControlName="name" translatePlaceholder>
+            <div class="input-group-prepend" inputGroupPrepend>
+              <div class="input-group-text">
+                <i class="fas fa-user fa-fw"></i>
+              </div>
+            </div>
+          </app-input-with-error>
         </div>
 
         <div class="form-group">
-          <div class="floating-label">
-            <input name="email" type="email" id="email-input" class="floating-input" placeholder="will@smith.com" appNotEmpty formControlName="email">
-            <label for="email-input" translate="contact.form.email.label"></label>
-          </div>
-          <app-input-error-messages [control]="email" name="email" prefix="contact.form"></app-input-error-messages>
+          <app-input-with-error formControlName="email" translatePlaceholder>
+            <div class="input-group-prepend" inputGroupPrepend>
+              <div class="input-group-text">
+                <i class="fas fa-envelope fa-fw"></i>
+              </div>
+            </div>
+          </app-input-with-error>
         </div>
 
         <div class="form-group">
-          <div class="floating-label">
-            <input name="phone" type="text" id="phone-input" class="floating-input" placeholder="+48 123 456 789" appNotEmpty formControlName="phone">
-            <label for="phone-input" translate="contact.form.phone.label"></label>
-          </div>
-          <app-input-error-messages [control]="phone" name="phone" prefix="contact.form"></app-input-error-messages>
+          <app-input-with-error formControlName="phone" translatePlaceholder>
+            <div class="input-group-prepend" inputGroupPrepend>
+              <div class="input-group-text">
+                <i class="fas fa-phone fa-fw"></i>
+              </div>
+            </div>
+          </app-input-with-error>
         </div>
 
         <div class="form-group">
-          <div class="floating-label">
-            <input name="subject" type="text" id="subject-input" class="floating-input" [placeholder]="'contact.form.subject.placeholder' | translate"
-              appNotEmpty formControlName="subject">
-            <label for="subject-input" translate="contact.form.subject.label"></label>
-          </div>
-          <app-input-error-messages [control]="subject" name="subject" prefix="contact.form"></app-input-error-messages>
+          <app-input-with-error formControlName="subject" translatePlaceholder>
+            <div class="input-group-prepend" inputGroupPrepend>
+              <div class="input-group-text">
+                <i class="fas fa-user fa-fw"></i>
+              </div>
+            </div>
+          </app-input-with-error>
         </div>
 
         <div class="form-group">
-          <div class="floating-label mb-0">
-            <textarea name="message" id="message-textarea" rows="10" class="floating-input" [placeholder]="'contact.form.message.placeholder' | translate"
-              appNotEmpty formControlName="message"></textarea>
-            <label for="message-textarea" translate="contact.form.message.label"></label>
-          </div>
+          <textarea formControlName="message" class="form-control" rows=6 [placeholder]="'contact.form.message.placeholder' | translate"
+            [class.is-invalid]="message.invalid && (message.dirty || message.touched)"></textarea>
           <app-input-error-messages [control]="message" name="message" prefix="contact.form"></app-input-error-messages>
         </div>
+
+        <small class="form-text text-muted mb-3" translate="contact.form.note"></small>
 
         <div class="buttons--container text-right">
           <div class="form-row">

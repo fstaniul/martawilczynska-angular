@@ -6,6 +6,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { AppSharedComponentsModule } from '../app-shared-components/app-shared-components.module';
+import { CustomFormsModule } from '../custom-forms/custom-forms.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { AppSharedComponentsModule } from '../app-shared-components/app-shared-c
     ReactiveFormsModule,
     RouterModule.forChild([{ path: '', component: ContactComponent }]),
     TranslateModule.forChild(),
-    AppSharedComponentsModule
+    AppSharedComponentsModule,
+    CustomFormsModule
   ],
   declarations: [ContactComponent, ContactFormComponent]
 })

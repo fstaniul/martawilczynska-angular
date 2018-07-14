@@ -1,26 +1,15 @@
-import {
-  Component,
-  Self,
-  Renderer2,
-  ViewChild,
-  ElementRef,
-  Input,
-  Host,
-  OnChanges,
-  SimpleChanges,
-  Optional
-} from '@angular/core';
+import { Component, Self, Renderer2, ViewChild, ElementRef, Input, Host, Optional, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NgControl, Validators } from '@angular/forms';
 import { TranslatePrefixDirective } from '../directives/translate-prefix.directive';
-import { TranslateService } from '@ngx-translate/core';
-import { take } from 'rxjs/operators';
+import { COMPONENT_WITH_PLACEHOLDER, IComponentWithPlaceholder } from '../ComponentWithPlaceholder';
 
 @Component({
   selector: 'app-input-with-error',
   templateUrl: './input-with-error.component.html',
-  styleUrls: ['./input-with-error.component.scss']
+  styleUrls: ['./input-with-error.component.scss'],
+  providers: [{ provide: COMPONENT_WITH_PLACEHOLDER, useExisting: forwardRef(() => InputWithErrorComponent) }]
 })
-export class InputWithErrorComponent implements ControlValueAccessor {
+export class InputWithErrorComponent implements ControlValueAccessor, IComponentWithPlaceholder {
   @ViewChild('input') input: ElementRef;
 
   onChangeCb: (value: string) => void;
@@ -29,7 +18,7 @@ export class InputWithErrorComponent implements ControlValueAccessor {
   disabled = false;
 
   // tslint:disable-next-line:no-input-rename
-  @Input('placeholder') _placeholder = '';
+  @Input('placeholder') placeholder = '';
   @Input() type = 'text';
 
   required = false;
@@ -79,11 +68,5 @@ export class InputWithErrorComponent implements ControlValueAccessor {
 
   get hasError() {
     return this.ngControl.control.invalid && (this.ngControl.control.touched || this.ngControl.control.dirty);
-  }
-
-  get placeholder() {
-    if (this.translateDir && this.translateDir.placeholder) {
-      return this.translateKey('placeholder');
-    } else return this._placeholder;
   }
 }

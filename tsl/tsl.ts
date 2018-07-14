@@ -8,15 +8,20 @@ _('navigation.drive');
 _('navigation.reviews');
 _('navigation.office-and-staff');
 
-_('contact.form.name.errors.required');
-_('contact.form.email.errors.required');
-_('contact.form.email.errors.email');
-_('contact.form.phone.errors.required');
-_('contact.form.phone.errors.pattern');
+_('contact.form.name.error.required');
+_('contact.form.email.error.required');
+_('contact.form.email.error.email');
+_('contact.form.phone.error.pattern');
+_('contact.form.subject.error.maxlength');
+_('contact.form.subject.error.required');
+
 _('contact.form.message.errors.required');
-_('contact.form.message.errors.maxLength');
-_('contact.form.subject.errors.maxLength');
-_('contact.form.subject.errors.required');
+_('contact.form.message.errors.maxlength');
+
+_('contact.form.name.placeholder');
+_('contact.form.email.placeholder');
+_('contact.form.phone.placeholder');
+_('contact.form.subject.placeholder');
 
 _('reviews.add.form.name.placeholder');
 _('reviews.add.form.email.placeholder');

@@ -30,41 +30,40 @@
         "submit": "Send e-mail"
       },
       "email": {
-        "errors": {
-          "email": "This is not a correct e-mail address!",
-          "required": "Write Your e-mail address so You can get a response."
+        "error": {
+          "email": "This is not properly formatted e-mail address. Please enter a valid one.",
+          "required": "Your e-mail address is required so You could receive a response."
         },
-        "label": "E-Mail address"
+        "placeholder": "E-mail address *"
       },
       "heading": "Contact Me via E-Mail",
       "message": {
         "errors": {
-          "maxLength": "Your message is too long. Maximum number of characters you can write here is 2000.",
-          "required": "Write Your message."
+          "maxlength": "This message is too long, please consider removing unnecessery content.",
+          "required": "Consider leaving a message before sending an e-mail."
         },
-        "label": "Message",
         "placeholder": "Write Your message here..."
       },
       "name": {
-        "errors": {
-          "required": "Write Your full name."
+        "error": {
+          "required": "Please provide us with Your name so we know with whom we will be correspoding."
         },
-        "label": "Full Name"
+        "placeholder": "Firstname and Lastname *"
       },
+      "note":
+        "We are not storing data in any way. Contents of this form are immediately sent to dr Marta Wilczyńska's e-mail.",
       "phone": {
-        "errors": {
-          "pattern": "Please write your phone number as +48 123 123 123",
-          "required": "Your phone number is required."
+        "error": {
+          "pattern": "Please enter phone number in format: +44 123 456 789"
         },
-        "label": "Phone number"
+        "placeholder": "Phone number"
       },
       "subject": {
-        "errors": {
-          "maxLength": "Subject can contain maximum of 300 characters.",
-          "required": "Subject is required."
+        "error": {
+          "maxlength": "This subject is too long. Please write your message in message box.",
+          "required": "Please provide message subject."
         },
-        "label": "Subject",
-        "placeholder": "Subject"
+        "placeholder": "Subject *"
       }
     },
     "message": {
@@ -158,21 +157,12 @@
         "phone": {
           "placeholder": ""
         },
-        "score": {
-          "label": ""
-        },
-        "submit": "",
         "text": {
           "errors": {
             "required": ""
-          },
-          "placeholder": ""
-        },
-        "visitDate": {
-          "placeholder": ""
+          }
         }
-      },
-      "heading": ""
+      }
     },
     "display": {
       "see-more": "See more"
