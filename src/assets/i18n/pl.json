@@ -113,7 +113,6 @@
 		"drive": "Dojazd",
 		"home": "Strona Główna",
 		"office-and-staff": "Gabinet i Personel",
-		"reviews": "Opinie",
 		"surgical-procedures": "Zabiegi Operacyjne"
 	},
 	"office-and-staff": {
@@ -132,31 +131,6 @@
 		}
 	},
 	"reviews": {
-		"add": {
-			"form": {
-				"email": {
-					"errors": {
-						"email": "Musisz podać prawidłowy adres e-mail!",
-						"required": "Adres e-mail jest wymagany!"
-					},
-					"placeholder": "Adres e-mail *"
-				},
-				"name": {
-					"errors": {
-						"required": "Musisz podać swoje Imię i Nazwisko"
-					},
-					"placeholder": "Imię i Nazwisko *"
-				},
-				"phone": {
-					"placeholder": "Numer telefonu"
-				},
-				"text": {
-					"errors": {
-						"required": "Musisz napisać opinie!"
-					}
-				}
-			}
-		},
 		"display": {
 			"see-more": "Zobacz więcej"
 		}
