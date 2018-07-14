@@ -1,11 +1,19 @@
-export function arrayShuffle(array: any[]) {
-  const a = [...array];
-  const n = a.length - 1;
-  for (let i = n; i > 0; i--) {
-    const j = Math.floor(Math.random() * n) + i;
-    const temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
+export function shuffleArray(array) {
+  let currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
   }
-  return a;
+
+  return array;
 }

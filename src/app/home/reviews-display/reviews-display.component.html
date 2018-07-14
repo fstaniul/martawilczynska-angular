@@ -1,9 +1,9 @@
-<div class="d-flex justify-content-center pt-4 pb-2" (mouseenter)="stopInterval()" (mouseleave)="startInterval()">
+<div class="d-flex justify-content-center pt-4 pb-2" (mouseenter)="stopInterval()" (mouseleave)="startInterval()" *ngIf="loaded; else loader">
   <div class="d-flex align-items-center justify-content-center arrow-container pl-2" (click)="moveLeft()">
     <i class="fas fa-arrow-left fa-2x arrow" [class.disabled]="currentItem === 0"></i>
   </div>
   <div class="review-carousel-container" #carouselContainer>
-    <div class="d-flex flex-row review-carousel" #carousel [style.transform]="transform">
+    <div class="d-flex flex-row review-carousel align-items-center" #carousel [style.transform]="transform">
       <!-- CAROUSEL ITEMS -->
       <div class="review-carousel-item" *ngFor="let item of items">
         <div class="review-stars mb-2">
@@ -13,7 +13,7 @@
         </p>
         <div class="d-flex flex-row justify-content-between">
           <div class="text-dark">
-            <small *ngIf="item.procedure">{{'home.reviews.procedure' | translate}}: {{item.procedure}}</small>
+            <small>{{item.date}}</small>
           </div>
           <div>~ {{item.signature}}</div>
         </div>
@@ -31,5 +31,10 @@
   </div>
 </div>
 <div class="pb-3 text-center">
-  <a [routerLink]="['/', lang, 'reviews']" class="btn btn-outline-light btn-rounded see-more-button" translate="reviews.display.see-more"></a>
+  <a href="https://www.znanylekarz.pl/marta-wilczynska-staniul/chirurg-plastyczny-chirurg/wroclaw#profile-opinions" target="_blank"
+    class="btn btn-outline-light btn-rounded see-more-button" translate="reviews.display.see-more"></a>
 </div>
+<ng-template #loader>
+  <ng-container *ngIf="loadError; else spinner"></ng-container>
+  <ng-template #spinner></ng-template>
+</ng-template>

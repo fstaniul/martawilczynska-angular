@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subscription, interval, Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { CacheService } from '../../services/cache.service';
-import { arrayShuffle } from '../../utils/array-shuffle';
+import { shuffleArray } from '../../utils/array-shuffle';
 
 export interface Review {
   date: Date;
@@ -24,8 +24,8 @@ export class ReviewsDisplayComponent implements OnInit, AfterViewInit, OnDestroy
 
   private _transform = 0;
   currentItem = 0;
-  items: any[] = [1, 2, 3];
-  loading = false;
+  items = [];
+  loaded = false;
   loadError = false;
 
   private intervalSub: Subscription;
@@ -37,15 +37,15 @@ export class ReviewsDisplayComponent implements OnInit, AfterViewInit, OnDestroy
   ) {}
 
   ngOnInit() {
-    this.loading = true;
+    this.loaded = false;
     this.getReviews().subscribe(
       (reviews) => {
-        this.items = arrayShuffle(reviews).slice(0, 3);
-        this.loading = false;
-        this.loadError = true;
+        this.items = shuffleArray(reviews).slice(0, 3);
+        this.loaded = true;
+        this.loadError = false;
       },
       (err) => {
-        this.loading = false;
+        this.loaded = false;
         this.loadError = true;
       }
     );
@@ -95,7 +95,8 @@ export class ReviewsDisplayComponent implements OnInit, AfterViewInit, OnDestroy
   }
 
   getStars(item: Review) {
-    return [].fill(0, 0, item.score);
+    if (!item) console.log(this.items);
+    return new Array(item.score).fill(0, 0, item.score);
   }
 
   get transform(): any {
