@@ -45,23 +45,51 @@
 
     &:hover {
       border-color: $primary;
+      cursor: pointer;
     }
   }
 }
 
-// .certificates-section {
-//   background: $white;
-//   border-top: 1px solid $light;
-//   border-bottom: 1px solid $light;
-// }
-
-.skew-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.certificates-section {
   background: $white;
-  transform: skew(0, -0.7deg);
   border-top: 1px solid $light;
   border-bottom: 1px solid $light;
-  z-index: -1;
+}
+
+// .skew-background {
+//   position: absolute;
+//   width: 100%;
+//   height: 100%;
+//   background: $white;
+//   transform: skew(0, -3deg);
+//   border-top: 1px solid $light;
+//   border-bottom: 1px solid $light;
+//   z-index: -1;
+// }
+
+.modal-image-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba($black, 0.8);
+}
+
+.modal-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+}
+
+.eye-on-hover {
+  color: $info;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 10px rgba($black, 0.4);
+  cursor: pointer;
 }

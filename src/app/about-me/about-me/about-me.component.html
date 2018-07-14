@@ -12,7 +12,7 @@
 </div>
 
 <section class="mt-5 py-3 certificates-section position-relative">
-  <div class="skew-background"></div>
+  <!-- <div class="skew-background"></div> -->
   <div class="mt-3 mb-3">
     <h2 class="niconne text-center mb-0" translate="about-me.certificates.heading"></h2>
     <small class="text-center d-block text-secondary" translate="about-me.certificates.subheading"></small>
@@ -22,12 +22,13 @@
   <!-- <app-better-carousel [elements]="horizontalCertificates" [template]="carouselTemplate" [elementMinWidth]="250" (elementClick)="clickOnCertificate($event)"></app-better-carousel> -->
   <app-netflixstyle-carousel-galery class="d-block" [elements]="verticalCertificates" [template]="carouselTemplate" [elementMinWidth]="200"></app-netflixstyle-carousel-galery>
   <app-netflixstyle-carousel-galery class="d-block mt-3" [elements]="horizontalCertificates" [template]="carouselTemplate"
-    [elementMinWidth]="200"></app-netflixstyle-carousel-galery>`
+    [elementMinWidth]="200"></app-netflixstyle-carousel-galery>
 </section>
 
 <ng-template #carouselTemplate let-element="element">
-  <div class="px-1 w-100 h-auto certificate">
-    <img class="w-100 h-auto" [src]="element.src" [alt]="element.alt" />
+  <div class="px-1 w-100 h-auto certificate position-relative" (mouseenter)="hover = element.src" (mouseleave)="hover = null">
+    <img class="w-100 h-auto" [src]="element.src" [alt]="element.alt" (click)="element.hover = null; clickedImage(element)" />
+    <i class="fas fa-fw fa-eye fa-3x eye-on-hover" *ngIf="hover === element.src" (click)="element.hover = false; clickedImage(element)"></i>
   </div>
 </ng-template>
 
@@ -50,3 +51,9 @@
     </div>
   </div>
 </section>
+
+<ng-template let-image="image" #imageTemplate>
+  <div class="modal-image-container" (click)="removeImage()" (keyup.esc)="removeImage()">
+    <img [src]="image.src" [alt]="image.alt" class="modal-image">
+  </div>
+</ng-template>

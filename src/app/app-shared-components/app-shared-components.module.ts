@@ -13,6 +13,7 @@ import { AlertComponent } from './components/alert/alert.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ContactInfoMartaComponent } from './components/contact/contact-info-marta/contact-info-marta.component';
 import { ContactInfoClinicComponent } from './components/contact/contact-info-clinic/contact-info-clinic.component';
+import { ModalSpawnerService } from './modal-spawner.service';
 
 @NgModule({
   imports: [CommonModule, TranslateModule.forChild()],
@@ -49,7 +50,7 @@ export class AppSharedComponentsModule {
   public static forRoot(): ModuleWithProviders {
     return {
       ngModule: AppSharedComponentsModule,
-      providers: []
+      providers: [ModalSpawnerService]
     };
   }
 }
