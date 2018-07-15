@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subscription, interval, Observable, of } from 'rxjs';
+import { Subscription, interval, Observable, of, fromEvent } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { CacheService } from '../../services/cache.service';
 import { shuffleArray } from '../../utils/array-shuffle';
+import { debounceTime } from 'rxjs/operators';
 
 export interface Review {
   date: Date;
@@ -29,6 +30,7 @@ export class ReviewsDisplayComponent implements OnInit, AfterViewInit, OnDestroy
   loadError = false;
 
   private intervalSub: Subscription;
+  private resizeSub: Subscription;
 
   constructor(
     private translateService: TranslateService,
@@ -49,6 +51,12 @@ export class ReviewsDisplayComponent implements OnInit, AfterViewInit, OnDestroy
         this.loadError = true;
       }
     );
+
+    this.resizeSub = fromEvent(window, 'resize')
+      .pipe(debounceTime(400))
+      .subscribe(() => {
+        this.calculateTranslation();
+      });
   }
 
   getReviews(): Observable<Review[]> {
@@ -62,6 +70,7 @@ export class ReviewsDisplayComponent implements OnInit, AfterViewInit, OnDestroy
 
   ngOnDestroy() {
     this.stopInterval();
+    if (this.resizeSub) this.resizeSub.unsubscribe();
   }
 
   startInterval() {

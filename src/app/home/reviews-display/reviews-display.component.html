@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-center pt-4 pb-2" (mouseenter)="stopInterval()" (mouseleave)="startInterval()" *ngIf="loaded; else loader">
-  <div class="d-flex align-items-center justify-content-center arrow-container pl-2" (click)="moveLeft()">
+  <div class="d-none d-md-flex align-items-center justify-content-center arrow-container pl-2" (click)="moveLeft()">
     <i class="fas fa-arrow-left fa-2x arrow" [class.disabled]="currentItem === 0"></i>
   </div>
   <div class="review-carousel-container" #carouselContainer>
@@ -11,17 +11,17 @@
         </div>
         <p class="review-text" [innerHTML]="item.review">
         </p>
-        <div class="d-flex flex-row justify-content-between">
-          <div class="text-dark">
+        <div class="review-signature">
+          <div class="text-dark order-2 order-sm-1">
             <small>{{item.date}}</small>
           </div>
-          <div>~ {{item.signature}}</div>
+          <div class="order-1 order-sm-2">~ {{item.signature}}</div>
         </div>
       </div>
       <!-- END OF CAROUSEL ITEMS -->
     </div>
   </div>
-  <div class="d-flex align-items-center justify-content-center arrow-container pr-2" (click)="moveRight()">
+  <div class="d-none d-md-flex align-items-center justify-content-center arrow-container pr-2" (click)="moveRight()">
     <i class="fas fa-arrow-right fa-2x arrow" [class.disabled]="currentItem === items.length - 1"></i>
   </div>
 </div>
