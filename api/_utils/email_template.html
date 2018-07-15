@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin-top: 1em;
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: #EEFFFD;
+    }
+
+    hr {
+      margin: 1em 0;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    .label,
+    .text {
+      padding: 0.5em;
+    }
+
+    .label {
+      background: #00A08D;
+      border: 1px solid #00A08D;
+      border-radius: 4px 0 0 4px;
+      color: #fff;
+      width: 140px;
+    }
+
+    .text {
+      color: #000;
+    }
+
+    .input {
+      display: block;
+      margin: 0.5em 1em;
+      background: white;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+    }
+
+    .textblock {
+      margin: 0.5em 1em;
+      padding: 0.5em;
+      background: #fff;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      text-align: left;
+      font-weight: normal;
+    }
+
+    hr {
+      border-color: #e2e2e2;
+      border-style: solid;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Email ze strony</h1>
+  <div class="input">
+    <span class="label">Imię i Nazwisko</span>
+    <span class="text">{{name}}</span>
+  </div>
+  <div class="input">
+    <span class="label">Adres e-mail</span>
+    <span class="text">{{email}}</span>
+  </div>
+  <div class="input">
+    <span class="label">Numer telefonu</span>
+    <span class="text">{{phone}}</span>
+  </div>
+  <div class="textblock">
+    <h2>{{subject}}</h2>
+    <hr>{{message}}
+  </div>
+</body>
+
+</html>
