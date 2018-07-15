@@ -1,8 +1,0 @@
-<div class="form-group">
-  <div class="mb-3 position-relative">
-    <label class="label" [class.focused]="isFocused" [class.not-empty]="!isEmpty" [class.error]="hasError()" (click)="input.focus()">{{label}}</label>
-    <input class="input" #input (input)="onChange($event.target.value)" (blur)="onTouched(); onFocused(false)" (focus)="onFocused(true)"
-      [class.focues]="isFocused" [placeholder]="placeholder" [disabled]="disabled" [class.error]="hasError()">
-  </div>
-  <app-error-list [control]="ngControl" [tslDir]="translatePrefix"></app-error-list>
-</div>

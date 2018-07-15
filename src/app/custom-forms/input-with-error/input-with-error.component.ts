@@ -1,5 +1,5 @@
 import { Component, Self, Renderer2, ViewChild, ElementRef, Input, Host, Optional, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NgControl, Validators } from '@angular/forms';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 import { TranslatePrefixDirective } from '../directives/translate-prefix.directive';
 import { COMPONENT_WITH_PLACEHOLDER, IComponentWithPlaceholder } from '../ComponentWithPlaceholder';
 
@@ -24,16 +24,15 @@ export class InputWithErrorComponent implements ControlValueAccessor, IComponent
   required = false;
 
   constructor(
-    @Self() private ngControl: NgControl,
-    private renderer2: Renderer2,
-    @Host()
     @Optional()
+    @Self()
+    private ngControl: NgControl,
+    private renderer2: Renderer2,
+    @Optional()
+    @Host()
     private translateDir: TranslatePrefixDirective
   ) {
     this.ngControl.valueAccessor = this;
-    if (Array.isArray(this.ngControl.validator) && this.ngControl.validator.includes(Validators.required)) {
-      this.required = true;
-    }
   }
 
   writeValue(value: string) {

@@ -4,8 +4,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { TranslatePrefixDirective } from './translate-prefix.directive';
 import { COMPONENT_WITH_PLACEHOLDER, IComponentWithPlaceholder } from '../ComponentWithPlaceholder';
-import { take } from '../../../../node_modules/rxjs/operators';
-import { Placeholder } from '../../../../node_modules/@angular/compiler/src/i18n/i18n_ast';
+import { take } from 'rxjs/operators';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
