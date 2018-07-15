@@ -1,6 +1,6 @@
 <?php
 
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 
 require_once('./_utils/fill_template.php');
 
@@ -21,7 +21,7 @@ if (isset($data['message']) && isset($data['subject']) && isset($data['phone']) 
     }
 
     $headers = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+    $headers .= 'Content-Type: text/html; charset=utf-8' . "\r\n";
     $headers .= 'From: ' . _fromMail . "\r\n";
     $headers .= "Replay-To: " . $data['email'] . "\r\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
