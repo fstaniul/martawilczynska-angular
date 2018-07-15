@@ -20,10 +20,11 @@ if (isset($data['message']) && isset($data['subject']) && isset($data['phone']) 
         die();
     }
 
-    $headers = 'From: ' . _fromMail . "\r\n";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+    $headers .= 'From: ' . _fromMail . "\r\n";
     $headers .= "Replay-To: " . $data['email'] . "\r\n";
     $headers .= 'X-Mailer: PHP/' . phpversion();
-    $headers .= "Content-Type: html/text; charset=utf-8\r\n";
 
     $emailTemplate = file_get_contents('./_utils/email_template.html');
     $templateData = ['name' => $data['name'], 'email' => $data['email'], 'phone' => $data['phone'], 'subject' => $data['subject'], 'message' => $data['message']];
