@@ -30,21 +30,21 @@ export class NavigationComponent implements OnInit, OnDestroy {
       iconClass: 'fas fa-heartbeat',
       translateString: 'navigation.surgical-procedures'
     },
-    {
-      path: 'office-and-staff',
-      iconClass: 'fas fa-users',
-      translateString: 'navigation.office-and-staff'
-    },
+    // {
+    //   path: 'office-and-staff',
+    //   iconClass: 'fas fa-users',
+    //   translateString: 'navigation.office-and-staff'
+    // },
     // {
     //   path: 'reviews',
     //   iconClass: 'fas fa-star',
     //   translateString: 'navigation.reviews'
     // },
-    {
-      path: 'drive',
-      iconClass: 'fas fa-car',
-      translateString: 'navigation.drive'
-    },
+    // {
+    //   path: 'drive',
+    //   iconClass: 'fas fa-car',
+    //   translateString: 'navigation.drive'
+    // },
     {
       path: 'contact',
       iconClass: 'fas fa-envelope',

@@ -19,11 +19,11 @@ export const routes: Routes = [
         path: 'surgical-procedures',
         loadChildren: './surgical-procedures/surgical-procedures.module#SurgicalProceduresModule'
       },
-      {
-        path: 'office-and-staff',
-        loadChildren: './office-and-staff/office-and-staff.module#OfficeAndStaffModule'
-      },
-      { path: 'drive', loadChildren: './drive/drive.module#DriveModule' },
+      // {
+      //   path: 'office-and-staff',
+      //   loadChildren: './office-and-staff/office-and-staff.module#OfficeAndStaffModule'
+      // },
+      // { path: 'drive', loadChildren: './drive/drive.module#DriveModule' },
       { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
       { path: '**', redirectTo: 'home' }
     ]

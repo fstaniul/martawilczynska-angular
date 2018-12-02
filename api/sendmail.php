@@ -8,7 +8,7 @@ const _fromMail = 'kontakt@martawilczynska.pl';
 
 $rawdata = file_get_contents('php://input');
 $data = json_decode($rawdata, true);
-$mailingList = 'Marta Wilczyńska-Staniul <marta.wilczynska@onet.eu>';
+$mailingList = 'Marta Wilczyńska-Staniul <martawilczynska.pl@gmail.com>';
 
 if (isset($data['message']) && isset($data['subject']) && isset($data['phone']) && isset($data['name']) && isset($data['email'])) {
     $data['message'] = htmlspecialchars($data['message']);
