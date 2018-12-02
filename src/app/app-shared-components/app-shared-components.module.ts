@@ -14,6 +14,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ContactInfoMartaComponent } from './components/contact/contact-info-marta/contact-info-marta.component';
 import { ContactInfoClinicComponent } from './components/contact/contact-info-clinic/contact-info-clinic.component';
 import { ModalSpawnerService } from './modal-spawner.service';
+import { AwesomeTooltipDirective } from './components/awesome-tooltip/awesome-tooltip.directive';
+import { AwesomeTooltipComponent } from './components/awesome-tooltip/awesome-tooltip.component';
 
 @NgModule({
   imports: [CommonModule, TranslateModule.forChild()],
@@ -29,7 +31,9 @@ import { ModalSpawnerService } from './modal-spawner.service';
     AnimatedLoaderComponent,
     AlertComponent,
     ContactInfoMartaComponent,
-    ContactInfoClinicComponent
+    ContactInfoClinicComponent,
+    AwesomeTooltipDirective,
+    AwesomeTooltipComponent
   ],
   exports: [
     LogoComponent,
@@ -43,7 +47,12 @@ import { ModalSpawnerService } from './modal-spawner.service';
     AnimatedLoaderComponent,
     AlertComponent,
     ContactInfoMartaComponent,
-    ContactInfoClinicComponent
+    ContactInfoClinicComponent,
+    AwesomeTooltipDirective,
+    AwesomeTooltipComponent
+  ],
+  entryComponents: [
+    AwesomeTooltipComponent
   ]
 })
 export class AppSharedComponentsModule {

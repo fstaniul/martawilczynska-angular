@@ -1,0 +1,6 @@
+<div class="tooltip-container" [ngStyle]="pos">
+  <span *ngIf="title">{{ title }}</span>
+  <ng-container *ngIf="template">
+    <ng-template *ngTemplateOutlet="template"></ng-template>
+  </ng-container>
+</div>
