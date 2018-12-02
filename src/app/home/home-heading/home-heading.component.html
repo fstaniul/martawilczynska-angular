@@ -1,0 +1,32 @@
+<div class="home-heading-container">
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-7">
+            <section class="text-section">
+                <ng-container *ngIf="!showContact; else contactTmp">
+                    <h1 class="niconne text-primary">Marta Wilczyńska</h1>
+                    <div class="text-container" [innerHTML]="'home.heading.text' | translate">
+
+                    </div>
+                </ng-container>
+                <ng-template #contactTmp>
+
+                </ng-template>
+                <div class="buttons-container">
+                    <button class="action-button" [appAwesomeTooltip]="contactTooltipTemplate">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <button class="action-button" [appAwesomeTooltip]="proceduresTooltipTemplate">
+                        <i class="fas fa-heartbeat"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<ng-template #contactTooltipTemplate>
+  <span class="text-info">KONTAKT</span>
+</ng-template>
+<ng-template #proceduresTooltipTemplate>
+  <span class="text-info">ZABIEGI OPERACYJNE</span>
+</ng-template>

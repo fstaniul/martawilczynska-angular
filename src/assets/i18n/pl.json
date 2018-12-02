@@ -102,6 +102,9 @@
     "subheading": {
       "aestetic": "Specjalista Chirurgii Plastycznej",
       "general": "Specjalista Chirurgii Ogólnej"
+    },
+    "heading": {
+        "text": "<p>Text</p><p>Text</p><p>Text</p>"
     }
   },
   "logo": {

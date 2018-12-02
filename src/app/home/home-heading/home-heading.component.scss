@@ -1,0 +1,61 @@
+@import 'src/styles/import';
+
+.home-heading-container {
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        height: calc(100vh - 200px);
+        padding: 0 100px;
+    }
+}
+
+.text-section {
+    background: $mainWhite;
+    border: 1px solid $mainGrey;
+    padding: 10px 10px 0 10px;
+
+    .text-container {
+        font-size: 22px;
+
+        & /deep/ p:nth-last-child(1) {
+            margin-bottom: 10px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        padding: 40px 40px 0 40px;
+
+        .text-container /deep/ p:nth-last-child(1) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.buttons-container {
+    margin-bottom: -32px;
+}
+
+.action-button {
+    background: $mainWhite;
+    color: $info;
+    border: 2px solid $info;
+    height: 64px;
+    width: 64px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 32px;
+    cursor: pointer;
+
+    &:first-child {
+        margin-right: 20px;
+    }
+
+    &:hover, &:active {
+      background: $info;
+      color: $mainWhite;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
